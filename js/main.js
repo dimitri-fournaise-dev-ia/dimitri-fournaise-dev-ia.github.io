@@ -633,7 +633,7 @@ const urlsToCache = [
   '/assets/js/main.js',
   '/index.html',
   '/about.html',
-  '/osteoflow.html',
+  '/flowsteo.html',
   '/contact.html'
 ];
 
