@@ -8,7 +8,7 @@ Allow: /
 # Pages principales - Indexation prioritaire
 Allow: /index.html
 Allow: /about.html
-Allow: /osteolys.html
+Allow: /flowsteo.html
 Allow: /contact.html
 
 # Assets statiques - Autorisation complète
@@ -83,7 +83,7 @@ Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap.xml
 # Informations additionnelles pour les développeurs
 # Portfolio: Dimitri Fournaise - Développeur IA & Applications Métier
 # Spécialisations: Intelligence Artificielle, Machine Learning, Développement Web
-# Projet phare: OsteoLys - Application de gestion pour ostéopathes
+# Projet phare: Flowsteo - Application de gestion pour ostéopathes
 # Contact: contact@dimitri-henry.dev
 # LinkedIn: https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b
 # Dernière mise à jour: 2025
