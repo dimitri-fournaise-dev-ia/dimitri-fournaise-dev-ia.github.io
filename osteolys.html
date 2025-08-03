@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>OsteoLys - Application de Gestion pour Ostéopathes | Dimitri Fournaise</title>
+  <meta name="description" content="OsteoLys : application moderne de gestion de cabinet pour ostéopathes. Gestion patients, gestion consultations, facturation automatisée, comptabilité. Solution RGPD compliant développée par Dimitri Fournaise.">
+  <meta name="keywords" content="OsteoLys, application ostéopathe, gestion cabinet médical, gestion des remplaçants, RGPD médical, application métier, développement médical, Dimitri Fournaise">
+  <meta name="author" content="Dimitri Fournaise">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OsteoLys - Application de Gestion pour Ostéopathes">
+  <meta property="og:description" content="Découvrez OsteoLys, l'application moderne qui révolutionne la gestion des cabinets d'ostéopathie. Interface intuitive, conformité RGPD et performance optimisée.">
+  <meta property="og:url" content="https://dimitri-fournaise-dev-ia.github.io/osteolys.html">
+  <meta property="og:image" content="https://dimitri-fournaise-dev-ia.github.io/images/osteolys/osteolys-hero.jpg">
+  <meta property="og:locale" content="fr_FR">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OsteoLys - Application de Gestion pour Ostéopathes">
+  <meta name="twitter:description" content="Solution moderne et complète pour la gestion des cabinets d'ostéopathie">
+  <meta name="twitter:image" content="https://dimitri-fournaise-dev-ia.github.io/images/osteolys/osteolys-hero.jpg">
+  
+  <link rel="canonical" href="https://dimitri-fournaise-dev-ia.github.io/osteolys.html">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OsteoLys",
+    "description": "Application moderne de gestion de cabinet pour ostéopathes avec gestion patients, planning intelligent et facturation automatisée",
+    "url": "https://dimitri-fournaise-dev-ia.github.io/osteolys.html",
+    "author": {
+      "@type": "Person",
+      "name": "Dimitri Fournaise",
+      "url": "https://dimitri-fournaise-dev-ia.github.io/"
+    },
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "featureList": [
+      "Gestion complète des patients",
+      "Planning intelligent avec notifications",
+      "Facturation automatisée",
+      "Conformité RGPD",
+      "Interface multi-supports",
+      "Tableaux de bord analytiques"
+    ]
+  }
+  </script>
+  
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="/js/main.js" as="script">
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+        <span>Dimitri Fournaise</span>
+      </a>
+      
+      <ul class="nav-menu" role="menubar">
+        <li role="none">
+          <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
+        </li>
+        <li role="none">
+          <a href="index.html#services" class="nav-link" role="menuitem">Services</a>
+        </li>
+        <li role="none">
+          <a href="osteolys.html" class="nav-link active" role="menuitem">OsteoLys</a>
+        </li>
+        <li role="none">
+          <a href="about.html" class="nav-link" role="menuitem">À propos</a>
+        </li>
+        <li role="none">
+          <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+        </li>
+      </ul>
+      
+      <div class="nav-controls">
+        <button class="theme-toggle" aria-label="Basculer le thème sombre/clair">
+          🌙
+        </button>
+        
+        <button class="hamburger" aria-label="Menu mobile" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero section" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-content">
+        <div class="project-hero-text animate-on-scroll">
+          <nav class="breadcrumb mb-md" aria-label="Fil d'ariane">
+            <a href="index.html" class="breadcrumb-link">Accueil</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="index.html#projets" class="breadcrumb-link">Projets</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">OsteoLys</span>
+          </nav>
+
+          <div class="project-badges mb-lg">
+            <span class="tag">Application Métier</span>
+            <span class="tag">RGPD Compliant</span>
+            <span class="tag">React/Node.js</span>
+            <span class="tag">En Production</span>
+          </div>
+          
+          <h1 id="hero-title" class="title-responsive mb-lg">
+            <span class="text-blue">OsteoLys</span><br>
+            Application de Gestion Complète pour Ostéopathes
+          </h1>
+          
+          <p class="hero-subtitle mb-xl">
+            Une solution moderne qui <strong>révolutionne la gestion des cabinets d'ostéopathie</strong> 
+            en remplaçant les outils obsolètes par une interface intuitive, sécurisée et performante.
+          </p>
+          
+          <div class="project-metrics grid grid-3 mb-xl">
+            <div class="metric-card">
+              <div class="metric-number text-blue">100%</div>
+              <div class="metric-label">RGPD Compliant</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number text-green">24/7</div>
+              <div class="metric-label">Disponibilité</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number text-gold">⚡</div>
+              <div class="metric-label">Performance</div>
+            </div>
+          </div>
+          
+          <div class="project-hero-actions">
+            <a href="#demo" class="btn btn-primary">
+              <span>Voir la démonstration</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              Discuter de votre projet
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-hero-image animate-on-scroll">
+          <div class="hero-mockup">
+            <img 
+              src="/images/osteolys/osteolys-dashboard-main.jpg" 
+              alt="OsteoLys - Interface principale du tableau de bord" 
+              class="mockup-image"
+              loading="eager"
+              width="600"
+              height="400"
+            >
+            <div class="mockup-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light" aria-labelledby="problem-title">
+    <div class="container">
+      <div class="problem-solution-content">
+        <div class="grid grid-2 gap-responsive">
+          <div class="problem-card animate-on-scroll">
+            <div class="card-icon text-gold mb-lg">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 9v4M12 17h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+              </svg>
+            </div>
+            <h2 id="problem-title">Le Défi</h2>
+            <p class="text-lg mb-lg">
+              Les ostéopathes jonglent quotidiennement entre <strong>gestion des patients</strong>, 
+              <strong>planification des rendez-vous</strong> et <strong>facturation</strong>.
+            </p>
+            
+            <ul class="problem-list">
+              <li class="problem-item">
+                <span class="problem-icon">📊</span>
+                <span>Solutions obsolètes et tableurs Excel peu fiables</span>
+              </li>
+              <li class="problem-item">
+                <span class="problem-icon">⏰</span>
+                <span>Perte de temps dans les tâches administratives</span>
+              </li>
+              <li class="problem-item">
+                <span class="problem-icon">🔒</span>
+                <span>Non-conformité aux réglementations RGPD</span>
+              </li>
+              <li class="problem-item">
+                <span class="problem-icon">📱</span>
+                <span>Absence de mobilité et synchronisation</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="solution-card animate-on-scroll">
+            <div class="card-icon text-green mb-lg">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+              </svg>
+            </div>
+            <h2>La Solution OsteoLys</h2>
+            <p class="text-lg mb-lg">
+              Une <strong>solution moderne, intuitive et complète</strong> spécialement 
+              conçue pour les praticiens en ostéopathie.
+            </p>
+            
+            <ul class="solution-list">
+              <li class="solution-item">
+                <span class="solution-icon">✨</span>
+                <span>Interface moderne et intuitive</span>
+              </li>
+              <li class="solution-item">
+                <span class="solution-icon">⚡</span>
+                <span>Automatisation des tâches répétitives</span>
+              </li>
+              <li class="solution-item">
+                <span class="solution-icon">🛡️</span>
+                <span>Conformité RGPD garantie</span>
+              </li>
+              <li class="solution-item">
+                <span class="solution-icon">🌐</span>
+                <span>Accessibilité multi-supports</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section" aria-labelledby="features-title">
+    <div class="container">
+      <h2 id="features-title" class="section-title">
+        Fonctionnalités Principales
+      </h2>
+      
+      <div class="features-grid grid grid-2 gap-responsive">
+        <div class="feature-card card animate-on-scroll">
+          <div class="feature-header">
+            <div class="feature-icon text-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h3>Gestion Complète des Patients</h3>
+          </div>
+          
+          <p class="feature-description">
+            Dossiers patients complets avec historique médical, notes de consultation 
+            et suivi personnalisé pour un accompagnement optimal.
+          </p>
+          
+          <ul class="feature-list">
+            <li>Fiches patients détaillées</li>
+            <li>Historique des consultations</li>
+            <li>Notes et observations personnalisées</li>
+            <li>Suivi de l'évolution thérapeutique</li>
+            <li>Alertes et rappels automatiques</li>
+          </ul>
+          
+          <div class="feature-image">
+            <img 
+              src="/images/osteolys/patients-management.jpg" 
+              alt="Interface de gestion des patients OsteoLys" 
+              loading="lazy"
+              width="400"
+              height="250"
+            >
+          </div>
+        </div>
+        
+        <div class="feature-card card animate-on-scroll">
+          <div class="feature-header">
+            <div class="feature-icon text-green">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h3>Planning Intelligent</h3>
+          </div>
+          
+          <p class="feature-description">
+            Système de rendez-vous avec notifications automatiques, gestion des créneaux 
+            et optimisation du planning pour maximiser l'efficacité.
+          </p>
+          
+          <ul class="feature-list">
+            <li>Calendrier intuitif avec vue multiple</li>
+            <li>Prise de rendez-vous en ligne</li>
+            <li>Notifications SMS/Email automatiques</li>
+            <li>Gestion des annulations et reports</li>
+            <li>Optimisation des créneaux libres</li>
+          </ul>
+          
+          <div class="feature-image">
+            <img 
+              src="/images/osteolys/planning-interface.jpg" 
+              alt="Interface de planning intelligent OsteoLys" 
+              loading="lazy"
+              width="400"
+              height="250"
+            >
+          </div>
+        </div>
+        
+        <div class="feature-card card animate-on-scroll">
+          <div class="feature-header">
+            <div class="feature-icon text-gold">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6M16 13H8M16 17H8"/>
+              </svg>
+            </div>
+            <h3>Facturation Automatisée</h3>
+          </div>
+          
+          <p class="feature-description">
+            Génération automatique des factures, suivi des paiements et export 
+            comptable simplifié pour une gestion financière optimale.
+          </p>
+          
+          <ul class="feature-list">
+            <li>Génération automatique des factures</li>
+            <li>Suivi des paiements en temps réel</li>
+            <li>Export comptable simplifié</li>
+            <li>Relances automatiques</li>
+            <li>Statistiques financières détaillées</li>
+          </ul>
+          
+          <div class="feature-image">
+            <img 
+              src="/images/osteolys/billing-system.jpg" 
+              alt="Système de facturation OsteoLys" 
+              loading="lazy"
+              width="400"
+              height="250"
+            >
+          </div>
+        </div>
+        
+        <div class="feature-card card animate-on-scroll">
+          <div class="feature-header">
+            <div class="feature-icon text-primary">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3v18h18"/>
+                <path d="M18 17V9"/>
+                <path d="M13 17V5"/>
+                <path d="M8 17v-3"/>
+              </svg>
+            </div>
+            <h3>Tableaux de Bord Analytiques</h3>
+          </div>
+          
+          <p class="feature-description">
+            Tableaux de bord avec métriques clés, analyse de l'activité et rapports 
+            détaillés pour piloter efficacement votre activité.
+          </p>
+          
+          <ul class="feature-list">
+            <li>Métriques clés en temps réel</li>
+            <li>Analyse de performance</li>
+            <li>Rapports d'activité personnalisés</li>
+            <li>Indicateurs financiers</li>
+            <li>Visualisations interactives</li>
+          </ul>
+          
+          <div class="feature-image">
+            <img 
+              src="/images/osteolys/analytics-dashboard.jpg" 
+              alt="Tableaux de bord analytiques OsteoLys" 
+              loading="lazy"
+              width="400"
+              height="250"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light" aria-labelledby="security-title">
+    <div class="container">
+      <div class="security-content">
+        <div class="security-header text-center mb-3xl">
+          <h2 id="security-title" class="section-title">
+            Sécurité & Conformité RGPD
+          </h2>
+          <p class="section-subtitle">
+            La protection des données médicales est au cœur de notre approche
+          </p>
+        </div>
+        
+        <div class="grid grid-3 gap-responsive">
+          <div class="security-card card animate-on-scroll">
+            <div class="security-icon text-blue mb-lg">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Chiffrement Avancé</h3>
+            <p>
+              Toutes les données sont chiffrées avec les standards AES-256 
+              et transmises via connexions sécurisées HTTPS/SSL.
+            </p>
+            <ul>
+              <li>Chiffrement bout en bout</li>
+              <li>Certificats SSL/TLS</li>
+              <li>Authentification forte</li>
+            </ul>
+          </div>
+          
+          <div class="security-card card animate-on-scroll">
+            <div class="security-icon text-green mb-lg">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+              </svg>
+            </div>
+            <h3>Conformité RGPD</h3>
+            <p>
+              Application conforme aux réglementations européennes sur la 
+              protection des données personnelles de santé.
+            </p>
+            <ul>
+              <li>Gestion des consentements</li>
+              <li>Droit à l'oubli</li>
+              <li>Portabilité des données</li>
+            </ul>
+          </div>
+          
+          <div class="security-card card animate-on-scroll">
+            <div class="security-icon text-gold mb-lg">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6"/>
+                <path d="M16 13H8M16 17H8M10 9H8"/>
+              </svg>
+            </div>
+            <h3>Sauvegarde Sécurisée</h3>
+            <p>
+              Sauvegardes automatiques et redondantes avec possibilité de 
+              restauration complète en cas de besoin.
+            </p>
+            <ul>
+              <li>Sauvegarde automatique</li>
+              <li>Stockage redondant</li>
+              <li>Restauration instantanée</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="section" aria-labelledby="demo-title">
+    <div class="container">
+      <h2 id="demo-title" class="section-title">
+        Démonstration Interactive
+      </h2>
+      
+      <div class="demo-content">
+        <div class="demo-nav animate-on-scroll mb-xl">
+          <div class="demo-tabs">
+            <button class="demo-tab active" data-demo="dashboard">
+              <span class="tab-icon">📊</span>
+              <span>Tableau de Bord</span>
+            </button>
+            <button class="demo-tab" data-demo="patients">
+              <span class="tab-icon">👥</span>
+              <span>Gestion Patients</span>
+            </button>
+            <button class="demo-tab" data-demo="planning">
+              <span class="tab-icon">📅</span>
+              <span>Planning</span>
+            </button>
+            <button class="demo-tab" data-demo="billing">
+              <span class="tab-icon">💳</span>
+              <span>Facturation</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="demo-viewer animate-on-scroll">
+          <div class="demo-panel active" id="demo-dashboard">
+            <div class="demo-mockup">
+              <img 
+                src="/images/osteolys/demo-dashboard.jpg" 
+                alt="Démonstration du tableau de bord OsteoLys" 
+                loading="lazy"
+                width="800"
+                height="500"
+              >
+              <div class="demo-overlay">
+                <div class="demo-features">
+                  <div class="demo-feature">
+                    <span class="feature-dot" style="top: 20%; left: 25%;"></span>
+                    <div class="feature-tooltip">
+                      <strong>Statistiques en temps réel</strong>
+                      <p>Consultations du jour, revenus, patients actifs</p>
+                    </div>
+                  </div>
+                  <div class="demo-feature">
+                    <span class="feature-dot" style="top: 40%; right: 30%;"></span>
+                    <div class="feature-tooltip">
+                      <strong>Planning du jour</strong>
+                      <p>Rendez-vous à venir avec détails patients</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="demo-panel" id="demo-patients">
+            <div class="demo-mockup">
+              <img 
+                src="/images/osteolys/demo-patients.jpg" 
+                alt="Démonstration de la gestion patients OsteoLys" 
+                loading="lazy"
+                width="800"
+                height="500"
+              >
+            </div>
+          </div>
+          
+          <div class="demo-panel" id="demo-planning">
+            <div class="demo-mockup">
+              <img 
+                src="/images/osteolys/demo-planning.jpg" 
+                alt="Démonstration du planning OsteoLys" 
+                loading="lazy"
+                width="800"
+                height="500"
+              >
+            </div>
+          </div>
+          
+          <div class="demo-panel" id="demo-billing">
+            <div class="demo-mockup">
+              <img 
+                src="/images/osteolys/demo-billing.jpg" 
+                alt="Démonstration de la facturation OsteoLys" 
+                loading="lazy"
+                width="800"
+                height="500"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light" aria-labelledby="tech-title">
+    <div class="container">
+      <h2 id="tech-title" class="section-title">
+        Architecture & Technologies
+      </h2>
+      
+      <div class="tech-architecture animate-on-scroll mb-3xl">
+        <div class="architecture-diagram">
+          <div class="arch-layer frontend">
+            <h3>Frontend</h3>
+            <div class="tech-icons">
+              <div class="tech-item">
+                <span class="tech-icon">⚛️</span>
+                <span>React</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">🎨</span>
+                <span>Material-UI</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">📱</span>
+                <span>PWA</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="arch-layer backend">
+            <h3>Backend</h3>
+            <div class="tech-icons">
+              <div class="tech-item">
+                <span class="tech-icon">🟢</span>
+                <span>Node.js</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">🚀</span>
+                <span>Express</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">🔐</span>
+                <span>JWT Auth</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="arch-layer database">
+            <h3>Base de Données</h3>
+            <div class="tech-icons">
+              <div class="tech-item">
+                <span class="tech-icon">🍃</span>
+                <span>MongoDB</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">📊</span>
+                <span>Analytics</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">💾</span>
+                <span>Redis Cache</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="arch-layer deployment">
+            <h3>Déploiement</h3>
+            <div class="tech-icons">
+              <div class="tech-item">
+                <span class="tech-icon">🐳</span>
+                <span>Docker</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">☁️</span>
+                <span>AWS</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-icon">🔄</span>
+                <span>CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-2 gap-responsive">
+        <div class="card animate-on-scroll">
+          <h3 class="text-blue mb-lg">Défis Techniques Relevés</h3>
+          <ul class="challenge-list">
+            <li class="challenge-item">
+              <strong>Conformité RGPD :</strong> Implémentation complète de la protection des données médicales
+            </li>
+            <li class="challenge-item">
+              <strong>Performance :</strong> Optimisation pour gérer plusieurs cabinets simultanément
+            </li>
+            <li class="challenge-item">
+              <strong>Sécurité :</strong> Chiffrement bout en bout et authentification renforcée
+            </li>
+            <li class="challenge-item">
+              <strong>UX Métier :</strong> Interface adaptée aux workflows spécifiques des ostéopathes
+            </li>
+          </ul>
+        </div>
+        
+        <div class="card animate-on-scroll">
+          <h3 class="text-green mb-lg">Résultats Obtenus</h3>
+          <ul class="result-list">
+            <li class="result-item">
+              <strong>Performance :</strong> Temps de réponse < 200ms sur toutes les actions
+            </li>
+            <li class="result-item">
+              <strong>Fiabilité :</strong> 99.9% de disponibilité avec sauvegarde automatique
+            </li>
+            <li class="result-item">
+              <strong>Adoption :</strong> Interface intuitive réduisant le temps de formation
+            </li>
+            <li class="result-item">
+              <strong>Évolutivité :</strong> Architecture modulaire permettant l'ajout de fonctionnalités
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="process-title">
+    <div class="container">
+      <h2 id="process-title" class="section-title">
+        Processus de Développement
+      </h2>
+      
+      <div class="development-timeline">
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <span class="timeline-number">1</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Étude Métier Approfondie</h3>
+            <p>
+              Analyse des workflows spécifiques aux ostéopathes, interviews 
+              de praticiens et identification des points de friction.
+            </p>
+            <div class="timeline-details">
+              <span class="timeline-tag">Recherche utilisateur</span>
+              <span class="timeline-tag">Analyse concurrentielle</span>
+              <span class="timeline-tag">Personas</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <span class="timeline-number">2</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Design UX/UI Optimisé</h3>
+            <p>
+              Conception d'interfaces intuitives optimisées pour un usage 
+              professionnel intensif avec focus sur l'efficacité.
+            </p>
+            <div class="timeline-details">
+              <span class="timeline-tag">Wireframes</span>
+              <span class="timeline-tag">Prototypage</span>
+              <span class="timeline-tag">Tests utilisateur</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <span class="timeline-number">3</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Développement Sécurisé</h3>
+            <p>
+              Implémentation complète avec conformité RGPD et standards 
+              de sécurité médicale les plus stricts.
+            </p>
+            <div class="timeline-details">
+              <span class="timeline-tag">Architecture sécurisée</span>
+              <span class="timeline-tag">Tests automatisés</span>
+              <span class="timeline-tag">Code reviews</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <span class="timeline-number">4</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Optimisation Performance</h3>
+            <p>
+              Architecture optimisée pour gérer plusieurs cabinets simultanément 
+              avec temps de réponse minimal et haute disponibilité.
+            </p>
+            <div class="timeline-details">
+              <span class="timeline-tag">Optimisation BDD</span>
+              <span class="timeline-tag">Mise en cache</span>
+              <span class="timeline-tag">Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-primary text-white" aria-labelledby="cta-title">
+    <div class="container text-center">
+      <div class="cta-content animate-on-scroll">
+        <h2 id="cta-title" class="title-responsive mb-lg text-white">
+          Vous avez un projet d'application métier ?
+        </h2>
+        
+        <p class="hero-subtitle mb-xl text-white">
+          Forte de l'expérience acquise avec <strong>OsteoLys</strong>, je peux vous accompagner 
+          dans le développement de votre solution sur mesure, adaptée à vos besoins métier spécifiques.
+        </p>
+        
+        <div class="cta-features grid grid-3 mb-xl">
+          <div class="cta-feature">
+            <div class="cta-icon">🎯</div>
+            <h3>Analyse Métier</h3>
+            <p>Compréhension approfondie de vos workflows</p>
+          </div>
+          <div class="cta-feature">
+            <div class="cta-icon">⚡</div>
+            <h3>Développement Agile</h3>
+            <p>Livraisons rapides et itératives</p>
+          </div>
+          <div class="cta-feature">
+            <div class="cta-icon">🛡️</div>
+            <h3>Sécurité Garantie</h3>
+            <p>Conformité réglementaire assurée</p>
+          </div>
+        </div>
+        
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-accent btn-lg">
+            <span>Discutons de votre projet</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+          </a>
+          <a href="index.html" class="btn btn-secondary btn-lg">
+            Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-anthracite text-white">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3 class="text-white">Dimitri comptabilité</h3>
+          <p>Développeur Intelligence Artificielle & Solutions Métier</p>
+          <p class="text-muted">Créateur de solutions innovantes comme OsteoLys</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="text-white">Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="osteolys.html">OsteoLys</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-project">
+          <h4 class="text-white">OsteoLys</h4>
+          <ul>
+            <li>Application métier</li>
+            <li>Conformité RGPD</li>
+            <li>Interface moderne</li>
+            <li>Performance optimisée</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dimitri comptabilité. Tous droits réservés.</p>
+        <p>OsteoLys - Solution innovante pour ostéopathes 🩺</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const demoTabs = document.querySelectorAll('.demo-tab');
+      const demoPanels = document.querySelectorAll('.demo-panel');
+      
+      demoTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.demo;
+          
+          demoTabs.forEach(t => t.classList.remove('active'));
+          demoPanels.forEach(p => p.classList.remove('active'));
+          
+          tab.classList.add('active');
+          document.getElementById(`demo-${target}`).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

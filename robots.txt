@@ -1,0 +1,89 @@
+# Développeur Intelligence Artificielle & Solutions Métier
+# https://dimitri-fournaise-dev-ia.github.io/
+
+# Règles générales pour tous les robots
+User-agent: *
+Allow: /
+
+# Pages principales - Indexation prioritaire
+Allow: /index.html
+Allow: /about.html
+Allow: /osteolys.html
+Allow: /contact.html
+
+# Assets statiques - Autorisation complète
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Fichiers spécifiques autorisés
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Optimisations pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Optimisations pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Optimisations pour autres moteurs majeurs
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Bloquer les bots non désirés ou agressifs
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Bloquer les scrapers agressifs
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: ScreamingFrogSEOSpider
+Disallow: /
+
+# Fichiers et dossiers à ne pas indexer (si existants)
+User-agent: *
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.vscode/
+Disallow: /src/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+# Référence au sitemap XML
+Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap.xml
+
+# Informations additionnelles pour les développeurs
+# Portfolio: Dimitri Fournaise - Développeur IA & Applications Métier
+# Spécialisations: Intelligence Artificielle, Machine Learning, Développement Web
+# Projet phare: OsteoLys - Application de gestion pour ostéopathes
+# Contact: contact@dimitri-henry.dev
+# LinkedIn: https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b
+# Dernière mise à jour: 2025
