@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@
   
   <link rel="canonical" href="https://dimitri-fournaise-dev-ia.github.io/about.html">
   
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -34,13 +35,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/responsive.css">
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Dimitri Fournaise",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressCountry": "FR"
+    },
     "url": "https://dimitri-fournaise-dev-ia.github.io/about.html",
     "image": "https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-about.jpg",
     "jobTitle": "Développeur Intelligence Artificielle",
@@ -54,24 +59,16 @@
       "React",
       "Node.js",
       "Python",
-      "Solutions Médicales"
+      "Solutions Médicales",
+      "Solutions Financières"
     ],
     "hasCredential": [
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Formation Intelligence Artificielle",
-        "description": "Formation approfondie en IA, machine learning et deep learning"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Développement Web Moderne",
-        "description": "Maîtrise des technologies web modernes et développement d'applications complexes"
-      }
+        "@type": "EducationalCredential",
+        "name": "Asset Management",
+        "description": "Formation approfondie quant et asset management"
+      }python  49520 S2H\dfournaise    3u  IPv4 290437      0t0  TCP *:irdmi (LISTEN)
     ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelance"
-    },
     "sameAs": [
       "https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b",
       "https://github.com/dimitri-fournaise-dev-ia"
@@ -94,25 +91,21 @@
         <li role="none">
           <a href="index.html" class="nav-link" role="menuitem">Accueil</a>
         </li>
-        <li role="none">
-          <a href="index.html#services" class="nav-link" role="menuitem">Services</a>
-        </li>
-        <li role="none">
-          <a href="flowsteo.html" class="nav-link" role="menuitem">Flowsteo</a>
+        <li role="none" class="nav-dropdown">
+          <a class="nav-link" role="menuitem">
+            Projets
+            <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="flowsteo.html" class="dropdown-item">Flowsteo</a>
+          </div>
         </li>
         <li role="none">
           <a href="about.html" class="nav-link active" role="menuitem">À propos</a>
         </li>
-        <li role="none">
-          <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
-        </li>
       </ul>
       
       <div class="nav-controls">
-        <button class="theme-toggle" aria-label="Basculer le thème sombre/clair">
-          🌙
-        </button>
-        
         <button class="hamburger" aria-label="Menu mobile" aria-expanded="false">
           <span></span>
           <span></span>
@@ -126,26 +119,21 @@
     <div class="container">
       <div class="hero-content">
         <div class="about-hero-text animate-on-scroll">
-          <nav class="breadcrumb mb-md" aria-label="Fil d'ariane">
-            <a href="index.html" class="breadcrumb-link">Accueil</a>
-            <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-current">À propos</span>
-          </nav>
 
           <h1 id="about-hero-title" class="title-responsive mb-lg">
-            Passionné par l'intersection entre <br>
-            <span class="text-blue">développement d'applications</span> et <span class="text-green">intelligence artificielle</span>
+            Passionné par l'intersection entre les<br>
+            <span class="text-gold">Mathématiques</span>, l'<span class="text-green">Intelligence Artificielle</span> et le <span class="text-blue">Développement d'Applications</span>
           </h1>
           
           <p class="hero-subtitle mb-xl">
             Je crée des <strong>solutions technologiques innovantes</strong> qui résolvent 
-            des problèmes concrets, en combinant expertise technique moderne et 
-            compréhension approfondie des besoins métier.
+            des problèmes concrets en combinant expertise technique moderne et 
+            compréhension approfondie des besoins métier
           </p>
           
           <div class="about-stats grid grid-3 mb-xl">
             <div class="stat-card">
-              <div class="stat-number text-blue">3+</div>
+              <div class="stat-number text-blue">10+</div>
               <div class="stat-label">Années d'expérience</div>
             </div>
             <div class="stat-card">
@@ -154,7 +142,7 @@
             </div>
             <div class="stat-card">
               <div class="stat-number text-gold">100%</div>
-              <div class="stat-label">Clients satisfaits</div>
+              <div class="stat-label">Projets en Productions</div>
             </div>
           </div>
           
@@ -164,9 +152,6 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
               </svg>
-            </a>
-            <a href="contact.html" class="btn btn-secondary">
-              Travaillons ensemble
             </a>
           </div>
         </div>
@@ -195,62 +180,62 @@
   <section id="parcours" class="section bg-light" aria-labelledby="journey-title">
     <div class="container">
       <h2 id="journey-title" class="section-title">
-        Mon Parcours Professionnel
+        Apprentissage Parallèle
       </h2>
-      
-      <div class="journey-timeline">
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-marker">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-badge">
-              <span class="tag">Projet Phare</span>
-              <span class="tag">Application Métier</span>
-            </div>
-            <h3>Création de Flowsteo</h3>
-            <p class="timeline-description">
-              <strong>Développement d'une application complète de gestion pour ostéopathes</strong>, 
-              combinant expertise métier et innovation technique. Solution RGPD compliant 
-              avec interface moderne et fonctionnalités avancées.
-            </p>
-            <ul class="timeline-achievements">
-              <li>Application full-stack React/Node.js</li>
-              <li>Conformité RGPD et sécurité médicale</li>
-              <li>Interface optimisée pour usage professionnel</li>
-              <li>Architecture scalable et performante</li>
-            </ul>
-            <div class="timeline-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Material-UI</span>
-            </div>
-          </div>
-        </div>
         
+        <div class="journey-timeline">
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-marker">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge">
+                <span class="tag">Projet Phare</span>
+                <span class="tag">Application Métier</span>
+              </div>
+              <h3>Création de Flowsteo</h3>
+              <p class="timeline-description">
+                <strong>Développement d'une application complète de gestion pour ostéopathes</strong> en
+                combinant expertise métier et solution moderne avec des fonctionnalités avancées
+              </p>
+              <ul class="timeline-achievements">
+                <li>Développement d'une application complète de gestion pour ostéopathes</li>
+                <li>Application full-stack React/FastAPI</li>
+                <li>Interface utilisateur moderne et optimisée pour un usage professionnel</li>
+                <li>Architecture scalable et performante</li>
+              </ul>
+              <div class="timeline-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Material-UI</span>
+              </div>
+            </div>
+          </div>
+
         <div class="timeline-item animate-on-scroll">
           <div class="timeline-marker">
-            <div class="timeline-year">2023</div>
+            <div class="timeline-year">2022</div>
             <div class="timeline-dot"></div>
           </div>
           <div class="timeline-content">
             <div class="timeline-badge">
-              <span class="tag">Intelligence Artificielle</span>
-              <span class="tag">Machine Learning</span>
+              <span class="tag">Mathématiques Appliquées</span>
+              <span class="tag">Data Science</span>
+              <span class="tag">Finance</span>
             </div>
-            <h3>Spécialisation en Intelligence Artificielle</h3>
+            <h3>Intelligence Artificielle & Prédictions Financières</h3>
             <p class="timeline-description">
-              <strong>Approfondissement en machine learning et deep learning</strong>. 
-              Développement de modèles IA pour diverses applications et maîtrise 
-              des frameworks modernes d'apprentissage automatique.
+              <strong>Spécialisation avancée en intelligence artificielle</strong> appliquée à l'analyse
+              et à la prédiction financières en combinant expertise mathématique et techniques d'IA 
+              pour la modélisation des marchés financiers
             </p>
             <ul class="timeline-achievements">
-              <li>Maîtrise de TensorFlow et PyTorch</li>
-              <li>Développement de modèles prédictifs</li>
-              <li>Traitement du langage naturel (NLP)</li>
-              <li>Computer Vision et analyse d'images</li>
+              <li>Maîtrise des réseaux de neurones profonds et architectures complexes</li>
+              <li>Utilisation de méthodes avancées de machine learning et deep learning</li>
+              <li>Traitement du langage naturel (NLP) pour l'analyse de sentiments financiers</li>
+              <li>Optimisation des hyperparamètres et évaluation rigoureuse des modèles</li>
             </ul>
             <div class="timeline-tech">
               <span class="tech-tag">Python</span>
@@ -263,62 +248,91 @@
         
         <div class="timeline-item animate-on-scroll">
           <div class="timeline-marker">
-            <div class="timeline-year">2022</div>
+            <div class="timeline-year">2020</div>
             <div class="timeline-dot"></div>
           </div>
           <div class="timeline-content">
             <div class="timeline-badge">
-              <span class="tag">Formation</span>
-              <span class="tag">Data Science</span>
+              <span class="tag">Frontend</span>
+              <span class="tag">Backend</span>
             </div>
-            <h3>Formation Intelligence Artificielle</h3>
+            <h3>Développement Full-Stack</h3>
             <p class="timeline-description">
-              <strong>Formation approfondie en intelligence artificielle</strong>, 
-              algorithmique avancée et science des données. Acquisition des 
-              bases théoriques et pratiques de l'IA moderne.
+              Acquisition de compétences en <strong>développement web full-stack moderne</strong> intégrant
+              des capacités d'analyse quantitative pour créer des applications data-driven
+              performantes et innovantes
             </p>
             <ul class="timeline-achievements">
-              <li>Algorithmes d'apprentissage automatique</li>
-              <li>Réseaux de neurones profonds</li>
-              <li>Mathématiques pour l'IA</li>
-              <li>Projets pratiques et cas d'usage</li>
+              <li>Développement d'interfaces utilisateur modernes avec React</li>
+              <li>réation de backends robustes avec FastAPI</li>
+              <li>Incorporation d'analyses de données côté serveur pour enrichissement fonctionnel</li>
+              <li>Mise en place de simples pipelines DevOps pour intégration et déploiement continus</li>
             </ul>
             <div class="timeline-tech">
-              <span class="tech-tag">Algorithmes ML</span>
-              <span class="tech-tag">Deep Learning</span>
-              <span class="tech-tag">Data Analysis</span>
-              <span class="tech-tag">Statistics</span>
+              <span class="tech-tag">Python </span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-badge">
+              <span class="tag">Initiation à l'IA</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+            <h3>Intelligence Artificielle</h3>
+            <p class="timeline-description">
+              <strong>Premiers pas dans le domaine de l'intelligence artificielle</strong> avec un focus sur
+              l'apprentissage automatique en découvrant le potentiel des algorithmes d'IA pour résoudre des
+              problèmes complexes de classification et prédiction
+            </p>
+            <ul class="timeline-achievements">
+              <li>Introduction aux algorithmes de machine learning supervisés et non supervisés</li>
+              <li>Mise en œuvre de modèles de classification et de régression</li>
+              <li>Expérimentations avec réseaux de neurones simples</li>
+              <li>Analyse de données et pré-traitement pour améliorer les performances des modèles</li>
+            </ul>
+            <div class="timeline-tech">
+              <span class="tech-tag">Python </span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">TensorFlow </span>
+              <span class="tech-tag">Matplotlib</span>
             </div>
           </div>
         </div>
         
         <div class="timeline-item animate-on-scroll">
           <div class="timeline-marker">
-            <div class="timeline-year">2021</div>
+            <div class="timeline-year">2018</div>
             <div class="timeline-dot"></div>
           </div>
           <div class="timeline-content">
             <div class="timeline-badge">
-              <span class="tag">Développement Web</span>
-              <span class="tag">Full-Stack</span>
+              <span class="tag">Mathématiques</span>
+              <span class="tag">Analyse Quantitative</span>
             </div>
-            <h3>Maîtrise du Développement Web Moderne</h3>
+            <h3>Fondation en Analyse Quantitative</h3>
             <p class="timeline-description">
-              <strong>Maîtrise des technologies web modernes</strong> et développement 
-              d'applications complexes. Focus sur les frameworks JavaScript modernes 
-              et l'architecture full-stack.
+              <strong>Maîtrise des concepts avancés en calcul</strong> stochastique, probabilités et statistiques
             </p>
             <ul class="timeline-achievements">
-              <li>Développement React et écosystème</li>
-              <li>Backend Node.js et Express</li>
-              <li>Bases de données et APIs REST</li>
-              <li>DevOps et déploiement cloud</li>
+              <li>Application des méthodes mathématiques à la modélisation financière</li>
+              <li>Optimisation mathématique et simulation Monte-Carlo pour la prise de décision</li>
+              <li>Développement d'algorithmes robustes de modélisation quantitative</li>
+              <li>Analyse statistique avancée</li>
             </ul>
             <div class="timeline-tech">
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">AWS</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Numpy</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">QuantLib</span>
             </div>
           </div>
         </div>
@@ -348,7 +362,7 @@
           <h3>Innovation Technologique</h3>
           <p class="philosophy-description">
             J'adopte les <strong>technologies de pointe</strong> pour résoudre des problèmes concrets 
-            et créer de la valeur réelle. L'innovation n'est pas un but en soi, 
+            et créer de la valeur réelle. L'innovation n'est pas un but en soi 
             mais un moyen d'apporter des solutions efficaces.
           </p>
           <div class="philosophy-principles">
@@ -363,6 +377,36 @@
             <div class="principle-item">
               <span class="principle-icon">🔬</span>
               <span>Expérimentation et prototype rapides</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="philosophy-card card animate-on-scroll">
+          <div class="philosophy-icon text-gold mb-lg">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20m8-10H4"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Qualité & Performance</h3>
+          <p class="philosophy-description">
+            <strong>Code propre, architecture scalable</strong> et bonnes pratiques 
+            sont mes standards de qualité. La performance n'est pas négociable 
+            dans un monde digital exigeant.
+          </p>
+          <div class="philosophy-principles">
+            <div class="principle-item">
+              <span class="principle-icon">⚡</span>
+              <span>Optimisation continue des performances</span>
+            </div>
+            <div class="principle-item">
+              <span class="principle-icon">🔧</span>
+              <span>Architecture maintenable et évolutive</span>
+            </div>
+            <div class="principle-item">
+              <span class="principle-icon">🧪</span>
+              <span>Tests automatisés et CI/CD</span>
             </div>
           </div>
         </div>
@@ -395,36 +439,7 @@
             </div>
           </div>
         </div>
-        
-        <div class="philosophy-card card animate-on-scroll">
-          <div class="philosophy-icon text-gold mb-lg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20m8-10H4"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          </div>
-          <h3>Qualité & Performance</h3>
-          <p class="philosophy-description">
-            <strong>Code propre, architecture scalable</strong> et bonnes pratiques 
-            sont mes standards de qualité. La performance n'est pas négociable 
-            dans un monde digital exigeant.
-          </p>
-          <div class="philosophy-principles">
-            <div class="principle-item">
-              <span class="principle-icon">⚡</span>
-              <span>Optimisation continue des performances</span>
-            </div>
-            <div class="principle-item">
-              <span class="principle-icon">🔧</span>
-              <span>Architecture maintenable et évolutive</span>
-            </div>
-            <div class="principle-item">
-              <span class="principle-icon">🧪</span>
-              <span>Tests automatisés et CI/CD</span>
-            </div>
-          </div>
-        </div>
-        
+
         <div class="philosophy-card card animate-on-scroll">
           <div class="philosophy-icon text-primary mb-lg">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -495,7 +510,7 @@
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Computer Vision</span>
+                <span class="skill-name">Computer Vision & OCR</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 75%"></div>
                 </div>
@@ -511,29 +526,29 @@
                   <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
                 </svg>
               </div>
-              <h3>Développement Web</h3>
+              <h3>Développement Web & Logiciel</h3>
             </div>
             <div class="skill-items">
               <div class="skill-item">
-                <span class="skill-name">React / Next.js</span>
+                <span class="skill-name">React</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 95%"></div>
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Node.js / Express</span>
+                <span class="skill-name">Python/FastAPI<span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 90%"></div>
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">TypeScript</span>
+                <span class="skill-name">Modules CSS</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 85%"></div>
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Python / FastAPI</span>
+                <span class="skill-name">Electron</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 88%"></div>
                 </div>
@@ -558,49 +573,23 @@
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">AWS</span>
+                <span class="skill-name">Azure</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 80%"></div>
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">CI/CD</span>
+                <span class="skill-name">GitHub</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 82%"></div>
                 </div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">MongoDB</span>
+                <span class="skill-name">PostgreSQL</span>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 88%"></div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="certifications-section animate-on-scroll">
-          <h3 class="text-center mb-xl">Certifications & Formations Continue</h3>
-          <div class="certifications-grid grid grid-4 gap-responsive">
-            <div class="certification-card">
-              <div class="cert-icon">🎓</div>
-              <h4>IA & Machine Learning</h4>
-              <p>Formation approfondie en algorithmes ML et Deep Learning</p>
-            </div>
-            <div class="certification-card">
-              <div class="cert-icon">⚛️</div>
-              <h4>React Ecosystem</h4>
-              <p>Maîtrise avancée de l'écosystème React et Next.js</p>
-            </div>
-            <div class="certification-card">
-              <div class="cert-icon">☁️</div>
-              <h4>AWS Cloud</h4>
-              <p>Déploiement et architecture cloud scalable</p>
-            </div>
-            <div class="certification-card">
-              <div class="cert-icon">🔒</div>
-              <h4>Sécurité & RGPD</h4>
-              <p>Conformité réglementaire et sécurité applicative</p>
             </div>
           </div>
         </div>
@@ -630,7 +619,7 @@
                 <h4>Évolution de l'IA</h4>
                 <p>
                   Passionné par l'<strong>évolution de l'intelligence artificielle</strong> 
-                  et son impact transformateur sur la société et les métiers.
+                  et son impact transformateur sur la société et les métiers
                 </p>
               </div>
             </div>
@@ -642,10 +631,10 @@
                 </svg>
               </div>
               <div class="interest-content">
-                <h4>Applications Médicales</h4>
+                <h4>Applications Métiers</h4>
                 <p>
                   Intérêt particulier pour les <strong>applications technologiques 
-                  dans le domaine médical</strong> et l'amélioration des soins.
+                  dans les domaines financiers</strong> et user-friendly
                 </p>
               </div>
             </div>
@@ -660,7 +649,7 @@
                 <h4>Veille Technologique</h4>
                 <p>
                   <strong>Veille technologique constante</strong> et formation continue 
-                  sur les nouvelles technologies et frameworks émergents.
+                  sur les nouvelles technologies et frameworks émergents
                 </p>
               </div>
             </div>
@@ -683,7 +672,7 @@
                 <h4>Travail d'Équipe</h4>
                 <p>
                   <strong>Travail en équipe, mentorat</strong> et partage de connaissances 
-                  avec la communauté des développeurs.
+                  avec la communauté des développeurs
                 </p>
               </div>
             </div>
@@ -697,8 +686,7 @@
               <div class="interest-content">
                 <h4>Open Source</h4>
                 <p>
-                  Contribution à des <strong>projets open source</strong> et création 
-                  d'outils utiles pour la communauté.
+                  Contribution à quelques <strong>projets open source</strong> et exploration de la base des modèles Hugging Face
                 </p>
               </div>
             </div>
@@ -710,80 +698,12 @@
                 </svg>
               </div>
               <div class="interest-content">
-                <h4>Formations & Conférences</h4>
+                <h4>Formations</h4>
                 <p>
-                  Participation à des <strong>conférences tech</strong> et organisation 
-                  de sessions de formation sur l'IA et le développement.
+                  Enseignement d'<strong>analyse financière et statistique</strong> pour étudiants en école de commerce depuis plusieurs années
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-primary text-white" aria-labelledby="cta-title">
-    <div class="container text-center">
-      <div class="cta-content animate-on-scroll">
-        <h2 id="cta-title" class="title-responsive mb-lg text-white">
-          Prêt à créer quelque chose d'<span class="text-gold">extraordinaire</span> ?
-        </h2>
-        
-        <p class="hero-subtitle mb-xl text-white">
-          Que vous ayez un projet d'<strong>intelligence artificielle</strong>, 
-          une <strong>application métier</strong> à développer, ou simplement 
-          l'envie de discuter technologie, je serais ravi d'échanger avec vous.
-        </p>
-        
-        <div class="cta-features grid grid-3 mb-xl">
-          <div class="cta-feature">
-            <div class="cta-icon">💡</div>
-            <h3>Consultation Gratuite</h3>
-            <p>Discussion libre sur votre projet et ses enjeux</p>
-          </div>
-          <div class="cta-feature">
-            <div class="cta-icon">🚀</div>
-            <h3>Prototypage Rapide</h3>
-            <p>Mise en place de POC pour valider les concepts</p>
-          </div>
-          <div class="cta-feature">
-            <div class="cta-icon">🤝</div>
-            <h3>Collaboration Long Terme</h3>
-            <p>Accompagnement complet de l'idée à la production</p>
-          </div>
-        </div>
-        
-        <div class="cta-actions">
-          <a href="contact.html" class="btn btn-accent btn-lg">
-            <span>Parlons de votre projet !</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-            </svg>
-          </a>
-          <a href="flowsteo.html" class="btn btn-secondary btn-lg">
-            Découvrir mes réalisations
-          </a>
-        </div>
-        
-        <div class="quick-contact mt-xl">
-          <p class="text-muted mb-md">Ou contactez-moi directement :</p>
-          <div class="contact-links">
-            <a href="mailto:contact@dimitri-henry.dev" class="contact-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <path d="M22 6l-10 7L2 6"/>
-              </svg>
-              <span>contact@dimitri-henry.dev</span>
-            </a>
-            <a href="https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b" class="contact-link" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
           </div>
         </div>
       </div>
@@ -796,7 +716,7 @@
         <div class="footer-info">
           <h3 class="text-white">Dimitri Fournaise</h3>
           <p>Développeur Intelligence Artificielle & Solutions Métier</p>
-          <p class="text-muted">Passionné par l'intersection entre développement et IA</p>
+          <p class="text-muted">Passionné par l'intersection entre mathématiques, IA et développement</p>
         </div>
         
         <div class="footer-links">
@@ -805,22 +725,31 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="about.html">À propos</a></li>
             <li><a href="flowsteo.html">Flowsteo</a></li>
-            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-expertise">
-          <h4 class="text-white">Expertise</h4>
+          <h4 class="text-white">Expertises</h4>
           <ul>
             <li>Intelligence Artificielle</li>
             <li>Machine Learning</li>
-            <li>Développement Web</li>
+            <li>Développement Web & Logiciel</li>
             <li>Applications Métier</li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
         <p>&copy; 2025 Dimitri Fournaise. Tous droits réservés.</p>
         <p>Développeur passionné par l'innovation technologique 🚀</p>
       </div>

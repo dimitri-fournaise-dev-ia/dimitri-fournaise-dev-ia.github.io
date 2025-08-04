@@ -6,7 +6,22 @@ const CONFIG = {
   observerThreshold: 0.1,
   observerRootMargin: '0px 0px -50px 0px',
   debounceDelay: 16,
-  prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  isMobile: window.innerWidth <= 768,
+  isTouch: 'ontouchstart' in window,
+  supportsPassive: (() => {
+    let supportsPassive = false;
+    try {
+      const opts = Object.defineProperty({}, 'passive', {
+        get() {
+          supportsPassive = true;
+        }
+      });
+      window.addEventListener('testPassive', null, opts);
+      window.removeEventListener('testPassive', null, opts);
+    } catch (e) {}
+    return supportsPassive;
+  })()
 };
 
 const debounce = (func, wait) => {
@@ -36,80 +51,14 @@ const throttle = (func, limit) => {
 
 const supportsAnimations = () => {
   return !CONFIG.prefersReducedMotion && 
-         'animate' in document.createElement('div');
+         !CONFIG.isMobile &&
+         'animate' in document.createElement('div') &&
+         window.requestAnimationFrame;
 };
 
 const logError = (error, context) => {
   console.error(`[Portfolio] Erreur dans ${context}:`, error);
 };
-
-class ThemeManager {
-  constructor() {
-    this.theme = localStorage.getItem('theme') || 'light';
-    this.toggleButton = document.querySelector('.theme-toggle');
-    this.init();
-  }
-
-  init() {
-    this.applyTheme();
-    this.setupToggleButton();
-    this.watchSystemTheme();
-  }
-
-  applyTheme() {
-    document.documentElement.setAttribute('data-theme', this.theme);
-    
-    if (this.toggleButton) {
-      const icon = this.theme === 'dark' ? '☀️' : '🌙';
-      this.toggleButton.innerHTML = icon;
-      this.toggleButton.setAttribute('aria-label', 
-        `Passer au thème ${this.theme === 'dark' ? 'clair' : 'sombre'}`
-      );
-    }
-
-    document.dispatchEvent(new CustomEvent('themeChange', { 
-      detail: { theme: this.theme } 
-    }));
-  }
-
-  toggleTheme() {
-    this.theme = this.theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', this.theme);
-    this.applyTheme();
-
-    if (supportsAnimations()) {
-      document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-      setTimeout(() => {
-        document.body.style.transition = '';
-      }, 300);
-    }
-  }
-
-  setupToggleButton() {
-    if (this.toggleButton) {
-      this.toggleButton.addEventListener('click', () => {
-        this.toggleTheme();
-        
-        if (supportsAnimations()) {
-          this.toggleButton.style.transform = 'scale(0.9)';
-          setTimeout(() => {
-            this.toggleButton.style.transform = '';
-          }, 150);
-        }
-      });
-    }
-  }
-
-  watchSystemTheme() {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        this.theme = e.matches ? 'dark' : 'light';
-        this.applyTheme();
-      }
-    });
-  }
-}
 
 class NavigationManager {
   constructor() {
@@ -124,7 +73,6 @@ class NavigationManager {
   init() {
     this.setupHamburgerMenu();
     this.setupSmoothScrolling();
-    this.setupScrollNavbar();
     this.setupActiveNavigation();
     this.setupKeyboardNavigation();
   }
@@ -189,8 +137,7 @@ class NavigationManager {
         const target = document.querySelector(targetId);
         
         if (target) {
-          const navbarHeight = this.navbar ? this.navbar.offsetHeight : 0;
-          const targetPosition = target.offsetTop - navbarHeight - 20;
+          const targetPosition = target.offsetTop - 20;
           
           if (supportsAnimations()) {
             window.scrollTo({
@@ -205,32 +152,6 @@ class NavigationManager {
     });
   }
 
-  setupScrollNavbar() {
-    const updateNavbar = throttle(() => {
-      if (!this.navbar) return;
-      
-      const scrollY = window.scrollY;
-      const theme = document.documentElement.getAttribute('data-theme');
-      
-      if (scrollY > CONFIG.scrollOffset) {
-        this.navbar.style.background = theme === 'dark' 
-          ? 'rgba(17, 24, 39, 0.98)' 
-          : 'rgba(255, 255, 255, 0.98)';
-        this.navbar.style.backdropFilter = 'blur(12px)';
-        this.navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-      } else {
-        this.navbar.style.background = theme === 'dark' 
-          ? 'rgba(17, 24, 39, 0.95)' 
-          : 'rgba(255, 255, 255, 0.95)';
-        this.navbar.style.backdropFilter = 'blur(10px)';
-        this.navbar.style.boxShadow = 'none';
-      }
-    }, CONFIG.debounceDelay);
-
-    window.addEventListener('scroll', updateNavbar);
-    
-    document.addEventListener('themeChange', updateNavbar);
-  }
 
   setupActiveNavigation() {
     const sections = document.querySelectorAll('section[id]');
@@ -270,146 +191,6 @@ class NavigationManager {
           this.navLinks[prevIndex].focus();
         }
       });
-    });
-  }
-}
-
-class AnimationManager {
-  constructor() {
-    this.animatedElements = new Set();
-    this.observer = null;
-    this.init();
-  }
-
-  init() {
-    if (supportsAnimations()) {
-      this.setupIntersectionObserver();
-      this.observeElements();
-      this.setupMicroInteractions();
-    } else {
-      this.showAllElements();
-    }
-  }
-
-  setupIntersectionObserver() {
-    const options = {
-      threshold: CONFIG.observerThreshold,
-      rootMargin: CONFIG.observerRootMargin
-    };
-
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !this.animatedElements.has(entry.target)) {
-          this.animateElement(entry.target);
-          this.animatedElements.add(entry.target);
-        }
-      });
-    }, options);
-  }
-
-  observeElements() {
-    const selectors = [
-      '.animate-on-scroll',
-      '.skill-card',
-      '.feature-card', 
-      '.timeline-item',
-      '.card',
-      '.hero-text',
-      '.hero-image'
-    ];
-
-    selectors.forEach(selector => {
-      document.querySelectorAll(selector).forEach(element => {
-        if (!element.style.opacity) {
-          element.style.opacity = '0';
-          element.style.transform = 'translateY(30px)';
-          element.style.transition = `opacity ${CONFIG.animationDuration}ms ease, transform ${CONFIG.animationDuration}ms ease`;
-        }
-        
-        this.observer.observe(element);
-      });
-    });
-  }
-
-  animateElement(element) {
-    try {
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-      element.classList.add('in-view');
-
-      if (element.classList.contains('hero-text')) {
-        setTimeout(() => {
-          element.style.transform = 'translateY(0) scale(1)';
-        }, 100);
-      }
-
-      if (element.classList.contains('card')) {
-        const delay = Array.from(element.parentNode.children).indexOf(element) * 100;
-        element.style.transitionDelay = `${delay}ms`;
-      }
-
-      if (element.classList.contains('timeline-item')) {
-        element.style.transform = 'translateX(0) translateY(0)';
-      }
-    } catch (error) {
-      logError(error, 'animateElement');
-    }
-  }
-
-  setupMicroInteractions() {
-    document.querySelectorAll('.btn').forEach(button => {
-      button.addEventListener('mouseenter', () => {
-        if (supportsAnimations()) {
-          button.style.transform = 'translateY(-2px)';
-        }
-      });
-
-      button.addEventListener('mouseleave', () => {
-        if (supportsAnimations()) {
-          button.style.transform = '';
-        }
-      });
-
-      button.addEventListener('mousedown', () => {
-        if (supportsAnimations()) {
-          button.style.transform = 'translateY(0) scale(0.98)';
-        }
-      });
-
-      button.addEventListener('mouseup', () => {
-        if (supportsAnimations()) {
-          button.style.transform = 'translateY(-2px) scale(1)';
-        }
-      });
-    });
-
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        if (supportsAnimations() && window.innerWidth > 768) {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / 20;
-          const rotateY = (centerX - x) / 20;
-          
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-        }
-      });
-
-      card.addEventListener('mouseleave', () => {
-        if (supportsAnimations()) {
-          card.style.transform = '';
-        }
-      });
-    });
-  }
-
-  showAllElements() {
-    document.querySelectorAll('[style*="opacity: 0"]').forEach(element => {
-      element.style.opacity = '1';
-      element.style.transform = 'none';
     });
   }
 }
@@ -529,7 +310,6 @@ class PerformanceManager {
   }
 }
 
-
 class ServiceWorkerManager {
   constructor() {
     this.init();
@@ -570,9 +350,7 @@ class PortfolioApp {
         });
       }
 
-      this.components.theme = new ThemeManager();
       this.components.navigation = new NavigationManager();
-      this.components.animation = new AnimationManager();
       this.components.lazyLoad = new LazyLoadManager();
       this.components.performance = new PerformanceManager();
       this.components.serviceWorker = new ServiceWorkerManager();
@@ -623,41 +401,6 @@ class PortfolioApp {
   }
 }
 
-
-const SW_CODE = `
-const CACHE_NAME = 'portfolio-v1';
-const urlsToCache = [
-  '/',
-  '/assets/css/style.css',
-  '/assets/css/responsive.css',
-  '/assets/js/main.js',
-  '/index.html',
-  '/about.html',
-  '/flowsteo.html',
-  '/contact.html'
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
-});
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
-  );
-});
-`;
-
 const app = new PortfolioApp();
 
 if (document.readyState === 'loading') {
@@ -670,23 +413,10 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = { PortfolioApp, app };
 }
 
-
-function createServiceWorkerFile() {
-  if (typeof Blob !== 'undefined' && typeof URL !== 'undefined') {
-    const blob = new Blob([SW_CODE], { type: 'application/javascript' });
-    const url = URL.createObjectURL(blob);
-    console.log('[ServiceWorker] Code généré. Créez le fichier sw.js avec le contenu suivant:', SW_CODE);
-  }
-}
-
-createServiceWorkerFile();
-
 window.portfolioDebug = {
   app,
-  theme: () => app.components.theme,
   nav: () => app.components.navigation,
   perf: () => app.components.performance.metrics,
-  toggleTheme: () => app.components.theme.toggleTheme(),
   reload: () => location.reload()
 };
 

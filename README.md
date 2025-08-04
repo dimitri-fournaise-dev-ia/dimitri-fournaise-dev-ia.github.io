@@ -1,5 +1,5 @@
 # Portfolio de Dimitri Fournaise
-Site web personnel présentant mes compétences en développement full-stack et intelligence artificielle.
+Site web personnel présentant mes compétences en Développement Full-Stack et Intelligence Artificielle.
 
 ## 🚀 Projet phare : Flowsteo
 Application de gestion complète pour ostéopathes
