@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 
 <head>
   <meta name="google-site-verification" content="PgEqnR8s9USX6R0IsYDXCpzir49qB2VniF6A54uiwWA" />
@@ -23,13 +23,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dimitri Fournaise - Développeur IA | Machine Learning">
   <meta name="twitter:description" content="Solutions innovantes en IA et développement web moderne">
-  <meta name="twitter:image" content="https://dimitri-henry-dev-ia.github.io/images/profile/dimitri-hero.jpg">
+  <meta name="twitter:image" content="https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-hero.jpg">
   
   <meta name="geo.region" content="FR">
   <meta name="geo.placename" content="France">
   
   <link rel="canonical" href="https://dimitri-fournaise-dev-ia.github.io/">
   
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -39,13 +40,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/responsive.css">
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Dimitri Fournaise",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressCountry": "FR"
+    },
     "url": "https://dimitri-fournaise-dev-ia.github.io/",
     "image": "https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-hero.jpg",
     "jobTitle": "Développeur Intelligence Artificielle",
@@ -54,13 +59,14 @@
       "name": "Freelance"
     },
     "alumniOf": {
-      "@type": "Organization",
+      "@type": "ENSAE",
       "name": "Formation Intelligence Artificielle"
     },
     "knowsAbout": [
       "Intelligence Artificielle",
       "Machine Learning",
       "Deep Learning",
+      "Django",
       "Développement Web",
       "React",
       "Node.js",
@@ -74,44 +80,38 @@
   }
   </script>
   
-  <!-- Preload des ressources critiques -->
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="/js/main.js" as="script">
   <link rel="preload" href="/images/profile/dimitri-profile.jpg" as="image">
 </head>
 
 <body>
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
-    <div class="nav-container">
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <nav class="navbar glass" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container container-lg">
       <a href="#home" class="logo" aria-label="Retour à l'accueil">
-        <span>Dimitri Fournaise</span>
+        <span class="logo-text">Dimitri Fournaise</span>
       </a>
       
       <ul class="nav-menu" role="menubar">
         <li role="none">
           <a href="#home" class="nav-link active" role="menuitem">Accueil</a>
         </li>
-        <li role="none">
-          <a href="#services" class="nav-link" role="menuitem">Services</a>
-        </li>
-        <li role="none">
-          <a href="#projets" class="nav-link" role="menuitem">Projets</a>
+        <li role="none" class="nav-dropdown">
+          <a class="nav-link" role="menuitem">
+            Projets
+            <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="flowsteo.html" class="dropdown-item">Flowsteo</a>
+          </div>
         </li>
         <li role="none">
           <a href="about.html" class="nav-link" role="menuitem">À propos</a>
         </li>
-        <li role="none">
-          <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
-        </li>
       </ul>
       
-      <!-- Contrôles -->
       <div class="nav-controls">
-        <button class="theme-toggle" aria-label="Basculer le thème sombre/clair">
-          🌙
-        </button>
-        
-        <!-- Menu hamburger mobile -->
         <button class="hamburger" aria-label="Menu mobile" aria-expanded="false">
           <span></span>
           <span></span>
@@ -121,50 +121,58 @@
     </div>
   </nav>
 
-  <!-- Section Hero -->
   <section id="home" class="hero section" aria-labelledby="hero-title">
-    <div class="container">
+    <div class="container-lg">
       <div class="hero-content">
-        <!-- Texte principal -->
-        <div class="hero-text animate-on-scroll">
-          <h1 id="hero-title" class="title-responsive">
-            Développeur <span class="text-blue">Intelligence Artificielle</span> & Solutions Métier
+        <div class="hero-text fade-in">
+          <h1 id="hero-title" class="title-responsive text-balance">
+            Développeur <span class="title-gradient">Intelligence Artificielle</span><br>
+            & Solutions Métier Innovantes
           </h1>
           
-          <p class="hero-subtitle">
-            Je crée des <strong>applications métier innovantes</strong> et développe des 
-            <strong>solutions d'intelligence artificielle</strong> qui transforment vos idées 
-            en réalité technologique. Passionné par l'intersection entre développement moderne et IA.
+          <p class="lead text-balance">
+            Je crée des applications métier innovantes et développe des 
+            solutions d'intelligence artificielle qui transforment vos idées 
+            en réalité technologique
           </p>
           
-          <!-- Tags compétences -->
-          <div class="hero-tags">
-            <span class="tag">Intelligence Artificielle</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Développement Web</span>
-            <span class="tag">Applications Métier</span>
-            <span class="tag">Solutions Médicales</span>
+          <div class="hero-tags gap-md">
+            <span class="badge badge-primary">Intelligence Artificielle</span>
+            <span class="badge badge-primary">Solutions Financières</span>
+            <span class="badge badge-primary">Machine Learning</span>
+            <span class="badge badge-primary">Développement Web</span>
+            <span class="badge badge-primary">Applications Métier</span>
+            <span class="badge badge-primary">Solutions Médicales</span>
           </div>
           
-          <!-- Call to Actions -->
-          <div class="hero-actions">
-            <a href="#projets" class="btn btn-primary">
+          <div class="hero-actions gap-lg">
+            <a href="#projets" class="btn btn-primary btn-float glow">
               <span>Découvrir mes projets</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
               </svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary">
+              <span>À propos de moi</span>
+            </a>
           </div>
         </div>
         
-        <div class="hero-image animate-on-scroll">
-          <img 
-            src="/images/profile/dimitri-profile.jpg" 
-            alt="Dimitri Fournaise - Développeur Intelligence Artificielle" 
-            class="profile-image gpu-accelerated"
-            loading="eager"
-            width="350"
-            height="350"
-          >
+        <div class="hero-image fade-in" style="animation-delay: 0.2s;">
+          <div class="profile-wrapper">
+            <img 
+              src="/images/profile/dimitri-profile.jpg" 
+              alt="Dimitri Fournaise - Développeur Intelligence Artificielle" 
+              class="profile-image"
+              loading="eager"
+              width="400"
+              height="400"
+            >
+            <div class="profile-decoration">
+              <div class="decoration-circle"></div>
+              <div class="decoration-dots"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -173,32 +181,11 @@
   <section id="services" class="section bg-light" aria-labelledby="services-title">
     <div class="container">
       <h2 id="services-title" class="section-title">
-        Mes Expertises
+        Expertises
       </h2>
       
-      <div class="grid grid-3 gap-responsive">
-        <div class="card animate-on-scroll">
-          <div class="card-icon text-blue">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-            </svg>
-          </div>
-          <h3>Développement Web Moderne</h3>
-          <p>
-            Applications web modernes avec <strong>React, Node.js, Python</strong>. 
-            Architecture scalable et UX optimisée pour vos besoins métier.
-          </p>
-          <ul class="card-features">
-            <li>Applications React / Next.js</li>
-            <li>API REST & GraphQL</li>
-            <li>Bases de données optimisées</li>
-            <li>Déploiement cloud</li>
-          </ul>
-        </div>
-        
-        <!-- Intelligence Artificielle -->
-        <div class="card animate-on-scroll">
+      <div class="grid grid-2">
+        <div class="card">
           <div class="card-icon text-gold">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 12l2 2 4-4"/>
@@ -208,19 +195,37 @@
           </div>
           <h3>Intelligence Artificielle</h3>
           <p>
-            <strong>Machine Learning, Deep Learning, NLP</strong>. Développement de 
-            modèles IA personnalisés et intégration en production.
+            <strong>Machine Learning, Deep Learning, NLP</strong> Développement de 
+            modèles IA personnalisés et intégration en production
           </p>
           <ul class="card-features">
-            <li>Modèles prédictifs</li>
+            <li>Modèles prédictifs en Finance</li>
             <li>Traitement du langage naturel</li>
-            <li>Computer Vision</li>
-            <li>Déploiement MLOps</li>
+            <li>Computer Vision et OCR</li>
+            <li>Automatisation intelligente</li>
           </ul>
         </div>
         
-        <!-- Solutions Médicales -->
-        <div class="card animate-on-scroll">
+        <div class="card">
+          <div class="card-icon text-primary">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Solutions Financières</h3>
+          <p>
+            Applications <strong>financières et de gestion</strong><br>
+            Analytics, Quant et pilotage pour optimiser les performances
+          </p>
+          <ul class="card-features">
+            <li>Quantitative Developper</li>
+            <li>Quantitative Analyst</li>
+            <li>Tableaux de bord financiers</li>
+            <li>Outils de pilotage</li>
+          </ul>
+        </div>
+
+        <div class="card">
           <div class="card-icon text-green">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -228,34 +233,61 @@
           </div>
           <h3>Solutions Médicales</h3>
           <p>
-            Solutions spécialisées pour le <strong>secteur médical</strong>. 
-            Gestion de données sensibles et conformité RGPD garantie.
+            Solutions spécialisées pour le <strong>secteur médical</strong>
+            Gestion de données sensibles et conformité RGPD
           </p>
           <ul class="card-features">
             <li>Applications de gestion médicale</li>
-            <li>Conformité RGPD/DMP</li>
+            <li>Conformité RGPD/HDS</li>
             <li>Sécurité renforcée</li>
             <li>Interface métier optimisée</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon text-blue">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+            </svg>
+          </div>
+          <h3>Développement Web & Logiciel</h3>
+          <p>
+            Applications modernes avec <strong>React, Node.js, Python</strong>
+            Architecture scalable et UX optimisée pour les besoins métier
+          </p>
+          <ul class="card-features">
+            <li>Applications React / Next.js</li>
+            <li>API REST</li>
+            <li>Bases de données optimisées</li>
+            <li>Déploiement Cloud et Mac/Windows</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Projet Principal -->
   <section id="projets" class="section" aria-labelledby="projets-title">
     <div class="container">
-      <h2 id="projets-title" class="section-title">
-        Projet Phare : Flowsteo
-      </h2>
+      <div class="project-header text-center mb-xl">
+        <img 
+          src="/images/flowsteo/logo.png" 
+          alt="Logo Flowsteo" 
+          class="project-logo mb-lg"
+          width="120"
+          height="120"
+        >
+        <h2 id="projets-title" class="section-title">
+          Flowsteo
+        </h2>
+      </div>
       
-      <div class="hero-content">
-        <!-- Détails du projet -->
-        <div class="project-content animate-on-scroll">
+      <div class="project-content-wrapper">
+        <div class="project-content animate-on-scroll text-center">
           <div class="project-badge">
             <span class="tag">Application Métier</span>
             <span class="tag">RGPD Compliant</span>
-            <span class="tag">React/Node.js</span>
+            <span class="tag">React/FastAPI</span>
           </div>
           
           <h3 class="project-title">
@@ -264,11 +296,21 @@
           
           <p class="project-description">
             <strong>Flowsteo</strong> révolutionne la gestion des cabinets d'ostéopathie 
-            avec une solution moderne, intuitive et complète. Interface optimisée, 
-            gestion des patients, planning intelligent et facturation intégrée.
+            avec une solution moderne, intuitive et complète. Interface optimisée avec les ostéopathes
+            pour la gestion des patients, comptabilité et facturation intégrée.
           </p>
           
-          <!-- Fonctionnalités clés -->
+          <div class="project-preview text-center mb-xl">
+            <img 
+              src="/images/flowsteo/flowsteo-dashboard.png" 
+              alt="Interface Flowsteo - Tableau de bord" 
+              class="preview-image"
+              loading="lazy"
+              width="600"
+              height="400"
+            >
+          </div>
+          
           <div class="project-features">
             <div class="feature-grid grid grid-2">
               <div class="feature-item">
@@ -294,8 +336,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h4>Planning Optimisé</h4>
-                  <p>Système de rendez-vous avec notifications et optimisation automatique</p>
+                  <h4>Tableaux de Bord</h4>
+                  <p>Analytics avancés et métriques clés pour optimiser votre activité</p>
                 </div>
               </div>
               
@@ -308,7 +350,7 @@
                 </div>
                 <div>
                   <h4>Facturation Intégrée</h4>
-                  <p>Génération automatique des factures et suivi des paiements</p>
+                  <p>Génération automatique des factures avec envoie aux mutuelles</p>
                 </div>
               </div>
               
@@ -319,61 +361,26 @@
                   </svg>
                 </div>
                 <div>
-                  <h4>Tableaux de Bord</h4>
-                  <p>Analytics avancés et métriques clés pour optimiser votre activité</p>
+                  <h4>Comptabilité</h4>
+                  <p>Suivi des recettes, dépenses et URSSAF avec tableaux de bord financiers en temps réel</p>
                 </div>
               </div>
             </div>
           </div>
-          
-          <!-- Call to action -->
-          <div class="project-actions">
-            <a href="flowsteo.html" class="btn btn-primary">
+          <br>
+          <div class="project-actions gap-lg">
+            <a href="flowsteo.html" class="btn btn-primary btn-float glow">
               <span>Découvrir Flowsteo</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
               </svg>
             </a>
-            <a href="contact.html" class="btn btn-secondary">
-              Discuter de votre projet
-            </a>
-          </div>
-        </div>
-        
-        <!-- Aperçu visuel du projet -->
-        <div class="project-image animate-on-scroll">
-          <div class="project-mockup">
-            <img 
-              src="/images/flowsteo/flowsteo-dashboard.jpg" 
-              alt="Interface Flowsteo - Tableau de bord" 
-              class="mockup-image"
-              loading="lazy"
-              width="500"
-              height="350"
-            >
-            <div class="mockup-overlay">
-              <div class="mockup-stats">
-                <div class="stat">
-                  <span class="stat-number">100%</span>
-                  <span class="stat-label">RGPD Compliant</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number">24/7</span>
-                  <span class="stat-label">Disponibilité</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number">⚡</span>
-                  <span class="stat-label">Performance</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Technologie & Approche -->
   <section class="section bg-light" aria-labelledby="tech-title">
     <div class="container">
       <h2 id="tech-title" class="section-title">
@@ -381,97 +388,43 @@
       </h2>
       
       <div class="grid grid-4 gap-responsive">
-        <!-- Technologies Frontend -->
         <div class="card animate-on-scroll">
           <h3>Frontend</h3>
           <div class="tech-stack">
             <span class="tech-item">React</span>
             <span class="tech-item">Next.js</span>
-            <span class="tech-item">TypeScript</span>
-            <span class="tech-item">Tailwind CSS</span>
+            <span class="tech-item">JavaScript</span>
+            <span class="tech-item">CSS Modules</span>
           </div>
         </div>
         
-        <!-- Technologies Backend -->
         <div class="card animate-on-scroll">
           <h3>Backend</h3>
           <div class="tech-stack">
             <span class="tech-item">Node.js</span>
             <span class="tech-item">Python</span>
-            <span class="tech-item">Express</span>
+            <span class="tech-item">Django</span>
             <span class="tech-item">FastAPI</span>
           </div>
         </div>
         
-        <!-- Intelligence Artificielle -->
         <div class="card animate-on-scroll">
           <h3>Intelligence Artificielle</h3>
           <div class="tech-stack">
             <span class="tech-item">TensorFlow</span>
             <span class="tech-item">PyTorch</span>
             <span class="tech-item">Scikit-learn</span>
-            <span class="tech-item">OpenAI</span>
+            <span class="tech-item">OpenAI & Mistral</span>
           </div>
         </div>
         
-        <!-- DevOps & Cloud -->
         <div class="card animate-on-scroll">
           <h3>DevOps & Cloud</h3>
           <div class="tech-stack">
             <span class="tech-item">Docker</span>
-            <span class="tech-item">AWS</span>
-            <span class="tech-item">Vercel</span>
+            <span class="tech-item">OVH</span>
+            <span class="tech-item">Azure</span>
             <span class="tech-item">GitHub Actions</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Call to Action -->
-  <section class="section" aria-labelledby="cta-title">
-    <div class="container text-center">
-      <div class="cta-content animate-on-scroll">
-        <h2 id="cta-title" class="title-responsive mb-lg">
-          Prêt à transformer votre idée en <span class="text-blue">solution innovante</span> ?
-        </h2>
-        
-        <p class="hero-subtitle mb-xl">
-          Que vous ayez besoin d'une application métier sur mesure, d'une solution d'IA 
-          ou d'expertise technique, je suis là pour concrétiser vos projets les plus ambitieux.
-        </p>
-        
-        <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary btn-lg">
-            <span>Discutons de votre projet</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-            </svg>
-          </a>
-          <a href="about.html" class="btn btn-secondary btn-lg">
-            En savoir plus sur mon parcours
-          </a>
-        </div>
-        
-        <!-- Contact rapide -->
-        <div class="quick-contact mt-xl">
-          <p class="text-muted mb-md">Ou contactez-moi directement :</p>
-          <div class="contact-links">
-            <a href="mailto:contact@dimitri-henry.dev" class="contact-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <path d="M22 6l-10 7L2 6"/>
-              </svg>
-              <span>contact@dimitri-henry.dev</span>
-            </a>
-            <a href="https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b" class="contact-link" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
           </div>
         </div>
       </div>
@@ -484,7 +437,7 @@
         <div class="footer-info">
           <h3 class="text-white">Dimitri Fournaise</h3>
           <p>Développeur Intelligence Artificielle & Solutions Métier</p>
-          <p class="text-muted">Créateur de solutions innovantes alliant technologie moderne et intelligence artificielle.</p>
+          <p class="text-muted">Créateur de solutions innovantes alliant technologie moderne et intelligence artificielle</p>
         </div>
         
         <div class="footer-links">
@@ -493,22 +446,32 @@
             <li><a href="#home">Accueil</a></li>
             <li><a href="about.html">À propos</a></li>
             <li><a href="flowsteo.html">Flowsteo</a></li>
-            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-services">
           <h4 class="text-white">Services</h4>
           <ul>
-            <li>Développement Web</li>
+            <li>Développement Web & Logiciel</li>
             <li>Intelligence Artificielle</li>
             <li>Applications Métier</li>
+            <li>Solutions Financières</li>
             <li>Solutions Médicales</li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
         <p>&copy; 2025 Dimitri Fournaise. Tous droits réservés.</p>
         <p>Développé avec passion pour l'innovation technologique 🚀</p>
       </div>
