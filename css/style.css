@@ -77,7 +77,19 @@ body {
   box-shadow: 0 2px 20px var(--shadow-light);
 }
 
-.nav-container {
+.bg-primary {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.bg-anthracite {
+  background: var(--anthracite);
+  color: white;
+}
+
+.hero {
+  padding: 6rem 0;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,8 +110,91 @@ body {
   color: var(--tech-blue);
 }
 
-.nav-menu {
+.text-blue { color: var(--primary-blue); }
+.text-green { color: var(--accent-green); }
+.text-gold { color: var(--accent-gold); }
+.text-primary { color: var(--primary-blue); }
+.text-white { color: white; }
+.text-muted { color: var(--text-muted); }
+.text-center { text-align: center; }
+
+.grid {
+  display: grid;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: start;
+}
+
+.grid-2 { 
+  grid-template-columns: repeat(2, 1fr); 
+  max-width: 1000px;
+  gap: 3rem;
+}
+.grid-3 { 
+  grid-template-columns: repeat(3, 1fr); 
+  max-width: 1200px;
+}
+.grid-4 { 
+  grid-template-columns: repeat(4, 1fr); 
+  max-width: 1400px;
+  gap: 2rem;
+}
+
+.grid-4 .card {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px var(--shadow-light);
+  transition: var(--transition);
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  border: 1px solid var(--border-light);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.card h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.card-features {
   list-style: none;
   gap: 2rem;
   align-items: center;
@@ -206,8 +301,13 @@ body {
   transform: rotate(45deg) translate(6px, 6px);
 }
 
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
 }
 
 .hamburger.active span:nth-child(3) {
