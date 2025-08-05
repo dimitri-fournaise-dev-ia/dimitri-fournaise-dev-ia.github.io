@@ -110,7 +110,7 @@ class NavigationManager {
   toggleMobileMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     this.hamburger.classList.toggle('active');
-    this.navMenu.classList.toggle('active');
+    this.navMenu.classList.toggle('mobile-open');
     
     document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
     
@@ -121,7 +121,7 @@ class NavigationManager {
   closeMobileMenu() {
     this.isMenuOpen = false;
     this.hamburger.classList.remove('active');
-    this.navMenu.classList.remove('active');
+    this.navMenu.classList.remove('mobile-open');
     document.body.style.overflow = '';
     
     this.hamburger.setAttribute('aria-expanded', 'false');
@@ -334,6 +334,50 @@ class ServiceWorkerManager {
   }
 }
 
+class ScrollAnimationManager {
+  constructor() {
+    this.observer = null;
+    this.init();
+  }
+
+  init() {
+    if ('IntersectionObserver' in window && !CONFIG.prefersReducedMotion) {
+      this.setupScrollObserver();
+      this.observeElements();
+    } else {
+      this.fallbackAnimation();
+    }
+  }
+
+  setupScrollObserver() {
+    const options = {
+      threshold: 0.1,
+      rootMargin: CONFIG.observerRootMargin
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+  }
+
+  observeElements() {
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      this.observer.observe(el);
+    });
+  }
+
+  fallbackAnimation() {
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.classList.add('in-view');
+    });
+  }
+}
+
 class PortfolioApp {
   constructor() {
     this.components = {};
@@ -351,6 +395,7 @@ class PortfolioApp {
       }
 
       this.components.navigation = new NavigationManager();
+      this.components.scrollAnimation = new ScrollAnimationManager();
       this.components.lazyLoad = new LazyLoadManager();
       this.components.performance = new PerformanceManager();
       this.components.serviceWorker = new ServiceWorkerManager();
@@ -400,6 +445,8 @@ class PortfolioApp {
     });
   }
 }
+
+document.documentElement.classList.add('js-enabled');
 
 const app = new PortfolioApp();
 
