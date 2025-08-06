@@ -441,6 +441,7 @@ h4 {
   grid-template-columns: repeat(3, 1fr); 
   max-width: 1200px;
 }
+
 .grid-4 { 
   grid-template-columns: repeat(4, 1fr); 
   max-width: 1400px;
@@ -1375,7 +1376,8 @@ h4 {
 .footer-services ul,
 .footer-expertise ul,
 .footer-project ul {
-  list-style: none;
+  list-style: none !important;
+  padding-left: 0;
 }
 
 .footer-links li,
