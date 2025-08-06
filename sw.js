@@ -8,7 +8,7 @@ const urlsToCache = [
   '/js/main.js',
   '/images/profile/dimitri-hero.jpg',
   '/images/profile/dimitri-profile.jpg',
-  '/images/profile/dimitri-about.jpg',
+  '/images/profile/dimitri-about.png',
   '/images/flowsteo/logo.png',
   '/images/flowsteo/flowsteo-hero.jpg',
   '/images/flowsteo/flowsteo-dashboard-main.jpg'

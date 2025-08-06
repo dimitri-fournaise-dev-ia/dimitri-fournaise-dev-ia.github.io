@@ -72,6 +72,7 @@ class NavigationManager {
 
   init() {
     this.setupHamburgerMenu();
+    this.setupDropdownMenu();
     this.setupSmoothScrolling();
     this.setupActiveNavigation();
     this.setupKeyboardNavigation();
@@ -126,6 +127,44 @@ class NavigationManager {
     
     this.hamburger.setAttribute('aria-expanded', 'false');
     this.navMenu.setAttribute('aria-hidden', 'true');
+  }
+
+  setupDropdownMenu() {
+    const dropdown = document.querySelector('.nav-dropdown');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownLink = dropdown?.querySelector('.nav-link');
+    
+    if (!dropdown || !dropdownMenu || !dropdownLink) return;
+
+    const isMobile = () => window.innerWidth <= 768;
+    let isDropdownOpen = false;
+
+    const handleDropdownClick = (e) => {
+      if (isMobile()) {
+        e.preventDefault();
+        isDropdownOpen = !isDropdownOpen;
+        dropdown.classList.toggle('active', isDropdownOpen);
+      }
+    };
+
+    const closeDropdown = () => {
+      isDropdownOpen = false;
+      dropdown.classList.remove('active');
+    };
+
+    dropdownLink.addEventListener('click', handleDropdownClick);
+
+    document.addEventListener('click', (e) => {
+      if (isMobile() && isDropdownOpen && !dropdown.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isMobile() && isDropdownOpen) {
+        closeDropdown();
+      }
+    });
   }
 
   setupSmoothScrolling() {

@@ -1,0 +1,25 @@
+# Dimitri Fournaise - Expert Développeur IA & Applications Métier
+# Spécialiste Intelligence Artificielle, Machine Learning, Développement Web & Logiciel
+# Portfolio professionnel - Créateur de Flowsteo
+# Contact: LinkedIn https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b
+
+https://dimitri-fournaise-dev-ia.github.io/
+# Dimitri Fournaise - Développeur IA spécialisé en intelligence artificielle
+# Compétences: Machine Learning, Deep Learning, NLP, Computer Vision & OCR, Python, JavaScript
+# Solutions d'automatisation et applications métier sur mesure
+# Expert en développement d'IA pour professionnels de santé et PME
+
+https://dimitri-fournaise-dev-ia.github.io/about.html
+# Parcours complet de Dimitri Fournaise, développeur IA senior
+# Formation en intelligence artificielle et machine learning
+# Expérience en développement d'applications innovantes
+# Expertise technique: Python, TensorFlow, PyTorch, React, FastAPI
+# Spécialisation secteurs : finance, santé, gestion d'entreprise, automatisation
+
+https://dimitri-fournaise-dev-ia.github.io/flowsteo.html
+# Flowsteo : Application de gestion complète pour ostéopathes et professionnels de santé
+# Fonctionnalités: planning patients, facturation, analytics, gestion cabinet
+# Développée par Dimitri Fournaise avec technologies modernes
+# Interface intuitive, automatisation des tâches administratives
+# Solution innovante pour optimiser la gestion des cabinets médicaux
+# Démonstration des compétences en développement d'applications métier complexes
