@@ -1369,7 +1369,8 @@ h4 {
 .footer-services ul,
 .footer-expertise ul,
 .footer-project ul {
-  list-style: none;
+  list-style: none !important;
+  padding-left: 0;
 }
 
 .footer-links li,
