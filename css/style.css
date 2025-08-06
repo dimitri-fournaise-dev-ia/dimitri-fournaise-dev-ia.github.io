@@ -77,7 +77,9 @@ body {
   box-shadow: 0 2px 20px var(--shadow-light);
 }
 
-.nav-container {
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,8 +100,7 @@ body {
   color: var(--tech-blue);
 }
 
-.nav-menu {
-  display: flex;
+.card-features {
   list-style: none;
   gap: 2rem;
   align-items: center;
@@ -231,8 +232,13 @@ body {
   transform: rotate(45deg) translate(6px, 6px);
 }
 
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
 }
 
 .hamburger.active span:nth-child(3) {
@@ -435,6 +441,7 @@ h4 {
   grid-template-columns: repeat(3, 1fr); 
   max-width: 1200px;
 }
+
 .grid-4 { 
   grid-template-columns: repeat(4, 1fr); 
   max-width: 1400px;
