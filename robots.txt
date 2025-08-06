@@ -1,55 +1,5 @@
 User-agent: *
-Allow: /
 
-Allow: /index.html
-Allow: /about.html
-Allow: /flowsteo.html
-
-Allow: /assets/
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-Allow: /favicon.ico
-Allow: /apple-touch-icon.png
-Allow: /robots.txt
-Allow: /sitemap.xml
-
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-User-agent: ia_archiver
-Disallow: /
-
-User-agent: ScreamingFrogSEOSpider
-Disallow: /
-
-User-agent: *
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /.vscode/
@@ -57,17 +7,33 @@ Disallow: /src/
 Disallow: /temp/
 Disallow: /tmp/
 Disallow: /logs/
+
 Disallow: /*.log$
 Disallow: /*.tmp$
+
 Disallow: /*?utm_*
 Disallow: /*?ref=*
 Disallow: /*?source=*
 
-Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap.xml
+User-agent: Googlebot
+Crawl-delay: 1
 
-# Informations additionnelles pour les développeurs
-# Portfolio: Dimitri Fournaise - Développeur IA & Applications Métier
-# Spécialisations: Intelligence Artificielle, Machine Learning, Développement Web & Logiciel
-# Projet phare: Flowsteo - Application de gestion pour ostéopathes
-# LinkedIn: https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b
-# Dernière mise à jour : 2025
+User-agent: Bingbot
+Crawl-delay: 2
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: ScreamingFrogSEOSpider
+Disallow: /
+
+Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap.xml
