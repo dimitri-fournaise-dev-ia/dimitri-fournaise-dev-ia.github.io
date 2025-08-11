@@ -15,7 +15,7 @@ Disallow: /*?utm_*
 Disallow: /*?ref=*
 Disallow: /*?source=*
 
-Allow: /sitemap.xml
+Allow: /sitemap_index.xml
 
 User-agent: AhrefsBot
 Disallow: /
@@ -32,4 +32,4 @@ Disallow: /
 User-agent: ScreamingFrogSEOSpider
 Disallow: /
 
-Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap.xml
+Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap_index.xml
