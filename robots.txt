@@ -1,0 +1,35 @@
+User-agent: *
+
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.vscode/
+Disallow: /src/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /logs/
+
+Disallow: /*.log$
+Disallow: /*.tmp$
+
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+Allow: /sitemap_index.xml
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: ScreamingFrogSEOSpider
+Disallow: /
+
+Sitemap: https://dimitri-fournaise-dev-ia.github.io/sitemap_index.xml
