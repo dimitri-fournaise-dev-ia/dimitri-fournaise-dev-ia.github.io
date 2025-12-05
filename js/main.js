@@ -76,6 +76,25 @@ class NavigationManager {
     this.setupSmoothScrolling();
     this.setupActiveNavigation();
     this.setupKeyboardNavigation();
+    this.setupScrollEffect();
+  }
+
+  setupScrollEffect() {
+    if (!this.navbar) return;
+
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', throttle(() => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        this.navbar.classList.add('scrolled');
+      } else {
+        this.navbar.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    }, 16));
   }
 
   setupHamburgerMenu() {
@@ -417,6 +436,282 @@ class ScrollAnimationManager {
   }
 }
 
+class TypingEffect {
+  constructor() {
+    this.phrases = [
+      'Intelligence Artificielle',
+      'Machine Learning',
+      'Solutions Métier',
+      'Applications Web',
+      'Deep Learning'
+    ];
+    this.currentPhrase = 0;
+    this.currentChar = 0;
+    this.isDeleting = false;
+    this.typingSpeed = 100;
+    this.deletingSpeed = 50;
+    this.pauseTime = 2000;
+    this.element = null;
+    this.init();
+  }
+
+  init() {
+    this.element = document.querySelector('.typing-text');
+    if (this.element) {
+      this.type();
+    }
+  }
+
+  type() {
+    const current = this.phrases[this.currentPhrase];
+
+    if (this.isDeleting) {
+      this.element.textContent = current.substring(0, this.currentChar - 1);
+      this.currentChar--;
+    } else {
+      this.element.textContent = current.substring(0, this.currentChar + 1);
+      this.currentChar++;
+    }
+
+    let typeSpeed = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
+
+    if (!this.isDeleting && this.currentChar === current.length) {
+      typeSpeed = this.pauseTime;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.currentChar === 0) {
+      this.isDeleting = false;
+      this.currentPhrase = (this.currentPhrase + 1) % this.phrases.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+class ParticlesBackground {
+  constructor() {
+    this.canvas = null;
+    this.ctx = null;
+    this.particles = [];
+    this.particleCount = 50;
+    this.mouse = { x: null, y: null, radius: 150 };
+    this.init();
+  }
+
+  init() {
+    const hero = document.querySelector('.hero');
+    if (!hero || CONFIG.isMobile) return;
+
+    this.canvas = document.createElement('canvas');
+    this.canvas.id = 'particles-canvas';
+    hero.insertBefore(this.canvas, hero.firstChild);
+
+    this.ctx = this.canvas.getContext('2d');
+    this.resize();
+    this.createParticles();
+    this.animate();
+
+    window.addEventListener('resize', () => this.resize());
+    window.addEventListener('mousemove', (e) => {
+      const rect = this.canvas.getBoundingClientRect();
+      this.mouse.x = e.clientX - rect.left;
+      this.mouse.y = e.clientY - rect.top;
+    });
+  }
+
+  resize() {
+    if (!this.canvas) return;
+    const hero = this.canvas.parentElement;
+    this.canvas.width = hero.offsetWidth;
+    this.canvas.height = hero.offsetHeight;
+  }
+
+  createParticles() {
+    this.particles = [];
+    for (let i = 0; i < this.particleCount; i++) {
+      this.particles.push({
+        x: Math.random() * this.canvas.width,
+        y: Math.random() * this.canvas.height,
+        size: Math.random() * 3 + 1,
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5,
+        opacity: Math.random() * 0.5 + 0.2
+      });
+    }
+  }
+
+  animate() {
+    if (!this.ctx) return;
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    this.particles.forEach((particle, index) => {
+      particle.x += particle.speedX;
+      particle.y += particle.speedY;
+
+      if (this.mouse.x !== null) {
+        const dx = this.mouse.x - particle.x;
+        const dy = this.mouse.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.mouse.radius) {
+          const force = (this.mouse.radius - distance) / this.mouse.radius;
+          particle.x -= dx * force * 0.02;
+          particle.y -= dy * force * 0.02;
+        }
+      }
+
+      if (particle.x < 0) particle.x = this.canvas.width;
+      if (particle.x > this.canvas.width) particle.x = 0;
+      if (particle.y < 0) particle.y = this.canvas.height;
+      if (particle.y > this.canvas.height) particle.y = 0;
+
+      this.ctx.beginPath();
+      this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      this.ctx.fillStyle = `rgba(0, 102, 255, ${particle.opacity})`;
+      this.ctx.fill();
+
+      this.particles.slice(index + 1).forEach(other => {
+        const dx = particle.x - other.x;
+        const dy = particle.y - other.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 120) {
+          this.ctx.beginPath();
+          this.ctx.moveTo(particle.x, particle.y);
+          this.ctx.lineTo(other.x, other.y);
+          this.ctx.strokeStyle = `rgba(0, 102, 255, ${0.1 * (1 - distance / 120)})`;
+          this.ctx.lineWidth = 1;
+          this.ctx.stroke();
+        }
+      });
+    });
+
+    requestAnimationFrame(() => this.animate());
+  }
+}
+
+class CustomCursor {
+  constructor() {
+    this.cursor = null;
+    this.cursorDot = null;
+    this.init();
+  }
+
+  init() {
+    if (CONFIG.isTouch || CONFIG.isMobile) return;
+
+    this.cursor = document.createElement('div');
+    this.cursor.className = 'custom-cursor';
+    document.body.appendChild(this.cursor);
+
+    this.cursorDot = document.createElement('div');
+    this.cursorDot.className = 'cursor-dot';
+    document.body.appendChild(this.cursorDot);
+
+    document.body.classList.add('has-custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      this.cursor.style.left = e.clientX + 'px';
+      this.cursor.style.top = e.clientY + 'px';
+      this.cursorDot.style.left = e.clientX + 'px';
+      this.cursorDot.style.top = e.clientY + 'px';
+    });
+
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .card, .btn');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        this.cursor.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        this.cursor.classList.remove('cursor-hover');
+      });
+    });
+
+    document.addEventListener('mousedown', () => {
+      this.cursor.classList.add('cursor-click');
+      this.cursorDot.classList.add('cursor-click');
+    });
+    document.addEventListener('mouseup', () => {
+      this.cursor.classList.remove('cursor-click');
+      this.cursorDot.classList.remove('cursor-click');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      this.cursor.style.opacity = '0';
+      this.cursorDot.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      this.cursor.style.opacity = '1';
+      this.cursorDot.style.opacity = '1';
+    });
+  }
+}
+
+class PageTransitions {
+  constructor() {
+    this.transitionElement = null;
+    this.init();
+  }
+
+  init() {
+    this.transitionElement = document.createElement('div');
+    this.transitionElement.className = 'page-transition';
+    document.body.appendChild(this.transitionElement);
+
+    document.body.classList.add('page-loaded');
+
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+
+      if (href &&
+          !href.startsWith('#') &&
+          !href.startsWith('http') &&
+          !href.startsWith('mailto') &&
+          href.endsWith('.html')) {
+
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.navigateTo(href);
+        });
+      }
+    });
+  }
+
+  navigateTo(url) {
+    this.transitionElement.classList.add('active');
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
+  }
+}
+
+class RippleEffect {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+
+        btn.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+  }
+}
+
 class PortfolioApp {
   constructor() {
     this.components = {};
@@ -425,7 +720,7 @@ class PortfolioApp {
 
   async init() {
     if (this.isInitialized) return;
-    
+
     try {
       if (document.readyState === 'loading') {
         await new Promise(resolve => {
@@ -439,14 +734,20 @@ class PortfolioApp {
       this.components.performance = new PerformanceManager();
       this.components.serviceWorker = new ServiceWorkerManager();
 
+      this.components.typingEffect = new TypingEffect();
+      this.components.particles = new ParticlesBackground();
+      this.components.customCursor = new CustomCursor();
+      this.components.pageTransitions = new PageTransitions();
+      this.components.rippleEffect = new RippleEffect();
+
       this.setupGlobalEvents();
       this.setupErrorHandling();
 
       this.isInitialized = true;
       console.log('[Portfolio] Application initialisée avec succès');
-      
+
       document.dispatchEvent(new CustomEvent('portfolioReady'));
-      
+
     } catch (error) {
       logError(error, 'App initialization');
     }

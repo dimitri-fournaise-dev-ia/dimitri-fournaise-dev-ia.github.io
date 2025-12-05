@@ -1,25 +1,109 @@
-# Dimitri Fournaise - Expert Développeur IA & Applications Métier
-# Spécialiste Intelligence Artificielle, Machine Learning, Développement Web & Logiciel
-# Portfolio professionnel - Créateur de Flowsteo
-# Contact: LinkedIn https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b
+# Dimitri Fournaise - Expert Developpeur IA & Applications Metier
+# Portfolio professionnel - Consultant en Intelligence Artificielle
+# Specialiste Machine Learning, Deep Learning, NLP, Computer Vision
+# Createur de Flowsteo - Application de gestion pour osteopathes
+
+## Informations principales
+- Nom: Dimitri Fournaise
+- Profession: Developpeur Intelligence Artificielle / Consultant IA
+- Localisation: Paris, France
+- Site web: https://dimitri-fournaise-dev-ia.github.io/
+- LinkedIn: https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b
+- GitHub: https://github.com/dimitri-fournaise-dev-ia
+
+## Pages du site
 
 https://dimitri-fournaise-dev-ia.github.io/
-# Dimitri Fournaise - Développeur IA spécialisé en intelligence artificielle
-# Compétences: Machine Learning, Deep Learning, NLP, Computer Vision & OCR, Python, JavaScript
-# Solutions d'automatisation et applications métier sur mesure
-# Expert en développement d'IA pour professionnels de santé et PME
+# Page d'accueil - Presentation de Dimitri Fournaise
+# Developpeur expert en Intelligence Artificielle et applications metier
+# Competences principales: Machine Learning, Deep Learning, NLP, Computer Vision, OCR
+# Technologies: Python, TensorFlow, PyTorch, React, FastAPI, Django, Node.js
+# Services: Developpement IA, Applications metier, Solutions financieres, Solutions medicales
+# Projet phare: Flowsteo - Application de gestion pour osteopathes
 
 https://dimitri-fournaise-dev-ia.github.io/about.html
-# Parcours complet de Dimitri Fournaise, développeur IA senior
-# Formation en intelligence artificielle et machine learning
-# Expérience en développement d'applications innovantes
-# Expertise technique: Python, TensorFlow, PyTorch, React, FastAPI
-# Spécialisation secteurs : finance, santé, gestion d'entreprise, automatisation
+# Page A propos - Parcours complet de Dimitri Fournaise
+# Formation: ENSAE Paris - Intelligence Artificielle et Machine Learning
+# Experience en developpement d'applications innovantes
+# Expertise technique approfondie en Python, TensorFlow, PyTorch, React, FastAPI
+# Specialisation secteurs: finance, sante, gestion d'entreprise, automatisation
+# Valeurs: Innovation, qualite, accompagnement client personnalise
 
 https://dimitri-fournaise-dev-ia.github.io/flowsteo.html
-# Flowsteo : Application de gestion complète pour ostéopathes et professionnels de santé
-# Fonctionnalités: planning patients, facturation, analytics, gestion cabinet
-# Développée par Dimitri Fournaise avec technologies modernes
-# Interface intuitive, automatisation des tâches administratives
-# Solution innovante pour optimiser la gestion des cabinets médicaux
-# Démonstration des compétences en développement d'applications métier complexes
+# Flowsteo - Application complete de gestion de cabinet pour osteopathes
+# Projet developpe entierement par Dimitri Fournaise
+# Fonctionnalites principales:
+#   - Gestion des patients avec dossiers medicaux complets
+#   - Facturation integree avec envoi automatique aux mutuelles
+#   - Tableaux de bord analytics pour suivi d'activite
+#   - Comptabilite avec suivi URSSAF en temps reel
+# Technologies: React, FastAPI, Python
+# Conformite: RGPD compliant, securite des donnees de sante
+# Demonstration des competences en developpement d'applications metier complexes
+
+## Competences techniques detaillees
+
+### Intelligence Artificielle
+- Machine Learning: Modeles predictifs, classification, regression, clustering
+- Deep Learning: Reseaux de neurones, CNN, RNN, Transformers
+- NLP (Natural Language Processing): Analyse de texte, chatbots, extraction d'informations
+- Computer Vision: Detection d'objets, reconnaissance d'images, OCR
+- Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras, OpenAI API, Mistral API
+
+### Developpement Web & Logiciel
+- Frontend: React, Next.js, JavaScript, TypeScript, CSS Modules
+- Backend: Python, Django, FastAPI, Node.js, Express
+- Bases de donnees: PostgreSQL, MongoDB, Redis, SQLite
+- Desktop: Electron pour applications Mac & Windows
+
+### DevOps & Cloud
+- Conteneurisation: Docker, Docker Compose
+- Cloud: Azure, OVH, AWS
+- CI/CD: GitHub Actions
+- Deploiement: Linux, serveurs dedies
+
+## Services proposes
+
+### Developpement Intelligence Artificielle
+- Creation de modeles IA personnalises
+- Integration de modeles en production
+- Automatisation intelligente des processus
+- Analyse predictive et prescriptive
+
+### Applications Metier
+- Developpement d'applications web sur mesure
+- Logiciels de gestion specifiques au metier
+- Interfaces utilisateur optimisees
+- Integration avec systemes existants
+
+### Solutions Financieres
+- Modeles quantitatifs (Quant)
+- Tableaux de bord financiers
+- Analyse de donnees financieres
+- Outils de pilotage et reporting
+
+### Solutions Medicales
+- Applications conformes RGPD et HDS
+- Gestion de donnees sensibles
+- Securite renforcee
+- Interfaces metier pour professionnels de sante
+
+## Questions frequentes (FAQ)
+
+Q: Quels services d'intelligence artificielle propose Dimitri Fournaise?
+R: Dimitri Fournaise propose des services de developpement en Intelligence Artificielle incluant: Machine Learning, Deep Learning, traitement du langage naturel (NLP), Computer Vision et OCR. Il developpe des modeles IA personnalises et les integre en production pour automatiser et optimiser les processus metier.
+
+Q: Qu'est-ce que Flowsteo?
+R: Flowsteo est une application complete de gestion de cabinet pour osteopathes developpee par Dimitri Fournaise. Elle comprend la gestion des patients avec dossiers medicaux, la facturation integree avec envoi aux mutuelles, des tableaux de bord analytics et la comptabilite avec suivi URSSAF. L'application est conforme RGPD.
+
+Q: Quelles technologies utilise Dimitri Fournaise?
+R: Dimitri Fournaise maitrise un large eventail de technologies: React et Next.js pour le frontend, Python avec Django et FastAPI pour le backend, TensorFlow, PyTorch et Scikit-learn pour l'IA, ainsi que Docker, Azure et OVH pour le deploiement cloud.
+
+Q: Dimitri Fournaise developpe-t-il des solutions pour le secteur medical?
+R: Oui, Dimitri Fournaise est specialise dans le developpement de solutions pour le secteur medical. Il cree des applications conformes RGPD et HDS pour la gestion de donnees sensibles, avec des interfaces metier optimisees et une securite renforcee. Flowsteo en est un exemple concret.
+
+Q: Peut-on faire appel a Dimitri Fournaise pour des solutions financieres?
+R: Oui, Dimitri Fournaise propose des solutions financieres incluant des modeles predictifs, des analyses quantitatives (Quant), des tableaux de bord financiers et des outils de pilotage pour optimiser les performances des entreprises.
+
+## Mots-cles pour la recherche
+developpeur intelligence artificielle, developpeur IA Paris, expert machine learning France, consultant deep learning, developpeur NLP, computer vision developpeur, application metier sur mesure, logiciel gestion osteopathe, Flowsteo, application sante RGPD, developpeur Python expert, React FastAPI developer, solutions financieres IA, automatisation processus IA, Dimitri Fournaise
