@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dimitri-portfolio-v1';
+const CACHE_NAME = 'dimitri-portfolio-v4';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -11,7 +11,11 @@ const urlsToCache = [
   '/images/profile/dimitri-about.png',
   '/images/flowsteo/logo.png',
   '/images/flowsteo/flowsteo-hero.jpg',
-  '/images/flowsteo/flowsteo-dashboard-main.jpg'
+  '/images/flowsteo/flowsteo-dashboard-main.jpg',
+  '/llms.txt',
+  '/humans.txt',
+  '/robots.txt',
+  '/sitemap.xml'
 ];
 
 self.addEventListener('install', event => {

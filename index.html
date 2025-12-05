@@ -45,38 +45,203 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://dimitri-fournaise-dev-ia.github.io/#person",
     "name": "Dimitri Fournaise",
+    "givenName": "Dimitri",
+    "familyName": "Fournaise",
+    "description": "Développeur expert en Intelligence Artificielle, Machine Learning et applications métier. Créateur de Flowsteo, solution de gestion pour ostéopathes.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Paris",
+      "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     },
     "url": "https://dimitri-fournaise-dev-ia.github.io/",
-    "image": "https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-hero.jpg",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-hero.jpg",
+      "width": 1200,
+      "height": 630
+    },
     "jobTitle": "Développeur Intelligence Artificielle",
     "worksFor": {
       "@type": "Organization",
-      "name": "Freelance"
+      "name": "Dimitri Fournaise - Consultant IA",
+      "@id": "https://dimitri-fournaise-dev-ia.github.io/#organization"
     },
     "alumniOf": {
-      "@type": "ENSAE",
-      "name": "Formation Intelligence Artificielle"
+      "@type": "EducationalOrganization",
+      "name": "ENSAE Paris",
+      "url": "https://www.ensae.fr/"
     },
     "knowsAbout": [
       "Intelligence Artificielle",
       "Machine Learning",
       "Deep Learning",
+      "Natural Language Processing (NLP)",
+      "Computer Vision",
+      "OCR",
       "Django",
+      "FastAPI",
       "Développement Web",
       "React",
       "Node.js",
       "Python",
-      "Applications Métier"
+      "TensorFlow",
+      "PyTorch",
+      "Applications Métier",
+      "Solutions Financières",
+      "Solutions Médicales"
     ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Développeur Intelligence Artificielle",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "skills": ["Machine Learning", "Deep Learning", "Python", "React", "FastAPI"]
+    },
     "sameAs": [
       "https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b",
       "https://github.com/dimitri-fournaise-dev-ia"
     ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://dimitri-fournaise-dev-ia.github.io/#organization",
+    "name": "Dimitri Fournaise - Consultant IA",
+    "description": "Consultant expert en Intelligence Artificielle et développement d'applications métier sur mesure pour PME et professionnels de santé.",
+    "url": "https://dimitri-fournaise-dev-ia.github.io/",
+    "logo": "https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-hero.jpg",
+    "image": "https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-hero.jpg",
+    "founder": {
+      "@id": "https://dimitri-fournaise-dev-ia.github.io/#person"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "serviceType": [
+      "Développement Intelligence Artificielle",
+      "Machine Learning",
+      "Développement Web",
+      "Applications Métier",
+      "Solutions Financières",
+      "Solutions Médicales"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de développement IA",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Développement Intelligence Artificielle",
+            "description": "Création de modèles IA personnalisés : Machine Learning, Deep Learning, NLP, Computer Vision"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Applications Métier",
+            "description": "Développement d'applications web et logiciels sur mesure avec React, FastAPI, Python"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Solutions Financières",
+            "description": "Analytics, modèles quantitatifs et tableaux de bord pour optimiser les performances"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Solutions Médicales",
+            "description": "Applications conformes RGPD pour professionnels de santé"
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b",
+      "https://github.com/dimitri-fournaise-dev-ia"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels services d'intelligence artificielle propose Dimitri Fournaise ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dimitri Fournaise propose des services de développement en Intelligence Artificielle incluant : Machine Learning, Deep Learning, traitement du langage naturel (NLP), Computer Vision et OCR. Il développe des modèles IA personnalisés et les intègre en production pour automatiser et optimiser les processus métier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que Flowsteo ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flowsteo est une application complète de gestion de cabinet pour ostéopathes développée par Dimitri Fournaise. Elle comprend la gestion des patients avec dossiers médicaux, la facturation intégrée avec envoi aux mutuelles, des tableaux de bord analytics et la comptabilité avec suivi URSSAF. L'application est conforme RGPD."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelles technologies utilise Dimitri Fournaise ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dimitri Fournaise maîtrise un large éventail de technologies : React et Next.js pour le frontend, Python avec Django et FastAPI pour le backend, TensorFlow, PyTorch et Scikit-learn pour l'IA, ainsi que Docker, Azure et OVH pour le déploiement cloud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dimitri Fournaise développe-t-il des solutions pour le secteur médical ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, Dimitri Fournaise est spécialisé dans le développement de solutions pour le secteur médical. Il crée des applications conformes RGPD et HDS pour la gestion de données sensibles, avec des interfaces métier optimisées et une sécurité renforcée. Flowsteo en est un exemple concret."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on faire appel à Dimitri Fournaise pour des solutions financières ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, Dimitri Fournaise propose des solutions financières incluant des modèles prédictifs, des analyses quantitatives (Quant), des tableaux de bord financiers et des outils de pilotage pour optimiser les performances des entreprises."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dimitri Fournaise - Développeur IA",
+    "url": "https://dimitri-fournaise-dev-ia.github.io/",
+    "description": "Portfolio de Dimitri Fournaise, développeur expert en Intelligence Artificielle et applications métier",
+    "author": {
+      "@id": "https://dimitri-fournaise-dev-ia.github.io/#person"
+    },
+    "publisher": {
+      "@id": "https://dimitri-fournaise-dev-ia.github.io/#organization"
+    },
+    "inLanguage": "fr-FR"
   }
   </script>
   
@@ -126,8 +291,8 @@
       <div class="hero-content">
         <div class="hero-text fade-in">
           <h1 id="hero-title" class="title-responsive text-balance">
-            Développeur <span class="title-gradient">Intelligence Artificielle</span>
-            & Solutions Métier Innovantes
+            Développeur Expert en<br>
+            <span class="typing-container"><span class="typing-text title-gradient">Intelligence Artificielle</span></span>
           </h1>
           
           <p class="lead text-balance">
@@ -454,7 +619,7 @@
           </a>
         </div>
         <p>&copy; 2025 Dimitri Fournaise. Tous droits réservés.</p>
-        <p>Développé avec passion pour l'innovation technologique 🚀</p>
+        <p>Développé avec passion pour l'innovation technologique</p>
       </div>
     </div>
   </footer>
