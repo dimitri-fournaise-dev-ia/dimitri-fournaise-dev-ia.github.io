@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dimitri-portfolio-v4';
+const CACHE_NAME = 'dimitri-portfolio-v5';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,11 +7,11 @@ const urlsToCache = [
   '/css/style.css',
   '/js/main.js',
   '/images/profile/dimitri-hero.jpg',
-  '/images/profile/dimitri-profile.jpg',
-  '/images/profile/dimitri-about.png',
-  '/images/flowsteo/logo.png',
+  '/images/profile/dimitri-about.webp',
+  '/images/flowsteo/logo.webp',
   '/images/flowsteo/flowsteo-hero.jpg',
-  '/images/flowsteo/flowsteo-dashboard-main.jpg',
+  '/images/flowsteo/flowsteo-dashboard.webp',
+  '/images/flowsteo/flowsteo-dashboard-main.webp',
   '/llms.txt',
   '/humans.txt',
   '/robots.txt',

@@ -19,6 +19,25 @@ Allow: /sitemap.xml
 Allow: /llms.txt
 Allow: /humans.txt
 
+# Crawlers IA (moteurs generatifs) - acces explicitement autorise
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: AhrefsBot
 Disallow: /
 
