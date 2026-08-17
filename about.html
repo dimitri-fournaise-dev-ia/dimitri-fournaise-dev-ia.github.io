@@ -17,6 +17,7 @@
   <meta property="og:url" content="https://dimitri-fournaise-dev-ia.github.io/about.html">
   <meta property="og:image" content="https://dimitri-fournaise-dev-ia.github.io/images/profile/dimitri-about.png">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Dimitri Fournaise - Développeur IA">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="À propos - Dimitri Fournaise | Développeur IA">
@@ -64,10 +65,10 @@
     ],
     "hasCredential": [
       {
-        "@type": "EducationalCredential",
+        "@type": "EducationalOccupationalCredential",
         "name": "Asset Management",
         "description": "Formation approfondie quant et asset management"
-      }python  49520 S2H\dfournaise    3u  IPv4 290437      0t0  TCP *:irdmi (LISTEN)
+      }
     ],
     "sameAs": [
       "https://fr.linkedin.com/in/dimitri-fournaise-kusa-52b3338b",
@@ -75,7 +76,28 @@
     ]
   }
   </script>
-  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://dimitri-fournaise-dev-ia.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "À propos",
+        "item": "https://dimitri-fournaise-dev-ia.github.io/about.html"
+      }
+    ]
+  }
+  </script>
+
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="/js/main.js" as="script">
 </head>
@@ -159,10 +181,11 @@
         <div class="about-hero-image animate-on-scroll" style="margin-top: 20px;">
           <div class="about-photo-container">
             <img 
-              src="/images/profile/dimitri-about.png" 
-              alt="Dimitri Fournaise - Développeur Intelligence Artificielle" 
+              src="/images/profile/dimitri-about.webp"
+              alt="Dimitri Fournaise - Développeur Intelligence Artificielle"
               class="about-photo"
               loading="eager"
+              fetchpriority="high"
               width="400"
               height="400"
             >
@@ -264,7 +287,7 @@
             </p>
             <ul class="timeline-achievements">
               <li>Développement d'interfaces utilisateur modernes avec React</li>
-              <li>réation de backends robustes avec FastAPI</li>
+              <li>Création de backends robustes avec FastAPI</li>
               <li>Incorporation d'analyses de données côté serveur pour enrichissement fonctionnel</li>
               <li>Mise en place de simples pipelines DevOps pour intégration et déploiement continus</li>
             </ul>
@@ -750,7 +773,7 @@
             LinkedIn
           </a>
         </div>
-        <p>&copy; 2025 Dimitri Fournaise. Tous droits réservés.</p>
+        <p>&copy; 2026 Dimitri Fournaise. Tous droits réservés.</p>
         <p>Développeur passionné par l'innovation technologique 🚀</p>
       </div>
     </div>
